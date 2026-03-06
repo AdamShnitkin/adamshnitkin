@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adam Shnitkin — Strategic Finance & CFO Leadership</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --off-white: #f2ede6;
+      --cream: #e8e0d4;
+      --gold: #c9a84c;
+      --gold-light: #e2c078;
+      --mid: #6b6560;
+      --accent: #1a3a5c;
+    }
+
+    /* ===== RCT2 THEME ===== */
+    body.rct2 {
+      --black: #1a6b3a;
+      --off-white: #ffffff;
+      --cream: #e8f4e8;
+      --gold: #ffcc00;
+      --gold-light: #ffdd44;
+      --mid: #4a7a5a;
+      --accent: #006688;
+      background: #1a6b3a !important;
+      font-family: 'Courier New', monospace !important;
+      image-rendering: pixelated;
+    }
+
+    body.rct2 * {
+      font-family: 'Courier New', monospace !important;
+      border-radius: 0 !important;
+    }
+
+    /* RCT2 tiled grass background — only visible behind hero canvas */
+    body.rct2 {
+      background: #245c38 !important;
+      background-image: none !important;
+    }
+
+    body.rct2 nav {
+      background: #c0c0c0 !important;
+      border-bottom: 3px solid #808080 !important;
+      border-top: 3px solid #ffffff !important;
+      backdrop-filter: none !important;
+      box-shadow: inset -2px -2px 0 #808080, inset 2px 2px 0 #ffffff;
+    }
+
+    body.rct2 .nav-logo {
+      color: #000080 !important;
+      font-size: 18px !important;
+      font-weight: bold !important;
+      letter-spacing: 1px !important;
+      text-shadow: 1px 1px 0 #ffffff;
+    }
+
+    body.rct2 .nav-links a {
+      color: #000000 !important;
+      opacity: 1 !important;
+      font-size: 12px !important;
+      letter-spacing: 0 !important;
+      background: #c0c0c0;
+      padding: 4px 10px;
+      border: 2px solid;
+      border-color: #ffffff #808080 #808080 #ffffff;
+    }
+
+    body.rct2 .nav-links a:hover {
+      background: #000080 !important;
+      color: #ffffff !important;
+      border-color: #808080 #ffffff #ffffff #808080 !important;
+    }
+
+    body.rct2 .hero-bg,
+    body.rct2 .hero-grid {
+      display: none !important;
+    }
+
+    body.rct2 .hero {
+      background: transparent !important;
+      padding-bottom: 60px;
+    }
+
+    body.rct2 .hero-bg {
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(0,102,136,0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(255,204,0,0.1) 0%, transparent 60%) !important;
+    }
+
+    body.rct2 .hero-grid {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px) !important;
+      background-size: 32px 32px !important;
+    }
+
+    body.rct2 .hero-tag {
+      color: #ffcc00 !important;
+      font-size: 13px !important;
+      letter-spacing: 1px !important;
+      text-shadow: 1px 1px 0 #000000;
+    }
+
+    body.rct2 .hero-name {
+      color: #ffffff !important;
+      text-shadow: 3px 3px 0 #000000, -1px -1px 0 #000000 !important;
+      font-size: clamp(60px, 10vw, 130px) !important;
+    }
+
+    body.rct2 .hero-name span { color: #ffcc00 !important; }
+
+    body.rct2 .hero-subtitle {
+      color: #e8f4e8 !important;
+      background: rgba(0,0,0,0.6);
+      padding: 12px 16px;
+      border: 2px solid #ffcc00;
+      text-shadow: 1px 1px 0 #000;
+    }
+
+    body.rct2 .btn-primary {
+      background: #000080 !important;
+      color: #ffffff !important;
+      border: 3px solid !important;
+      border-color: #ffffff #808080 #808080 #ffffff !important;
+      font-size: 13px !important;
+      letter-spacing: 1px !important;
+      text-shadow: none;
+      box-shadow: 2px 2px 0 #000000;
+    }
+
+    body.rct2 .btn-primary:hover {
+      background: #0000cc !important;
+      transform: translate(1px, 1px) !important;
+      box-shadow: 1px 1px 0 #000000 !important;
+      border-color: #808080 #ffffff #ffffff #808080 !important;
+    }
+
+    body.rct2 .btn-secondary {
+      background: #c0c0c0 !important;
+      color: #000000 !important;
+      border: 3px solid !important;
+      border-color: #ffffff #808080 #808080 #ffffff !important;
+      font-size: 13px !important;
+      letter-spacing: 1px !important;
+      box-shadow: 2px 2px 0 #000000;
+    }
+
+    body.rct2 .btn-secondary:hover {
+      background: #a0a0a0 !important;
+      transform: translate(1px, 1px) !important;
+      box-shadow: 1px 1px 0 #000000 !important;
+      border-color: #808080 #ffffff #ffffff #808080 !important;
+    }
+
+    body.rct2 .stat-num { color: #ffcc00 !important; text-shadow: 2px 2px 0 #000; }
+    body.rct2 .stat-label { color: #e8f4e8 !important; text-shadow: 1px 1px 0 #000; }
+    body.rct2 .scroll-line { background: linear-gradient(to bottom, #ffcc00, transparent) !important; }
+
+    body.rct2 section { background: #2a7a4a !important; }
+    body.rct2 #experience, body.rct2 #contact { background: #1e7040 !important; }
+
+    body.rct2 .section-label {
+      color: #ffcc00 !important;
+      text-shadow: 1px 1px 0 #000;
+      letter-spacing: 1px !important;
+    }
+
+    body.rct2 .section-title {
+      color: #ffffff !important;
+      text-shadow: 3px 3px 0 #000000 !important;
+    }
+
+    body.rct2 .divider { background: rgba(0,0,0,0.3) !important; border-top: 2px solid rgba(255,255,255,0.2); }
+
+    body.rct2 .about-text p { color: #e8f4e8 !important; text-shadow: 1px 1px 0 rgba(0,0,0,0.5); }
+    body.rct2 .about-text p strong { color: #ffcc00 !important; }
+
+    body.rct2 .about-card {
+      background: #c0c0c0 !important;
+      border: 3px solid !important;
+      border-color: #ffffff #808080 #808080 #ffffff !important;
+      box-shadow: 4px 4px 0 #000000;
+    }
+
+    body.rct2 .about-card h3 { color: #000080 !important; text-shadow: none; }
+    body.rct2 .contact-row { color: #000000 !important; }
+    body.rct2 .contact-row a { color: #000080 !important; }
+    body.rct2 .contact-row a:hover { color: #0000ff !important; }
+
+    body.rct2 .contact-row .icon {
+      background: #000080 !important;
+      border: 2px solid !important;
+      border-color: #ffffff #808080 #808080 #ffffff !important;
+      color: #ffffff;
+    }
+
+    body.rct2 .exp-item {
+      border-bottom: 2px solid rgba(0,0,0,0.3) !important;
+      background: rgba(0,0,0,0.1);
+      padding: 32px 16px !important;
+    }
+
+    body.rct2 .exp-item:first-child { border-top: 2px solid rgba(0,0,0,0.3) !important; }
+
+    body.rct2 .exp-company {
+      color: #ffcc00 !important;
+      text-shadow: 1px 1px 0 #000;
+      letter-spacing: 1px !important;
+    }
+
+    body.rct2 .exp-date { color: #e8f4e8 !important; }
+    body.rct2 .exp-role { color: #ffffff !important; text-shadow: 1px 1px 0 #000; }
+    body.rct2 .exp-desc { color: #c8e4c8 !important; }
+    body.rct2 .exp-bullets li { color: #e8f4e8 !important; }
+    body.rct2 .exp-bullets li::before { color: #ffcc00 !important; content: '►' !important; }
+
+    body.rct2 .skill-block {
+      background: #c0c0c0 !important;
+      border: 3px solid !important;
+      border-color: #ffffff #808080 #808080 #ffffff !important;
+      box-shadow: 3px 3px 0 #000000;
+    }
+
+    body.rct2 .skill-block:hover {
+      background: #d0d0d0 !important;
+      border-color: #ffffff #606060 #606060 #ffffff !important;
+    }
+
+    body.rct2 .skill-block h3 { color: #000080 !important; text-shadow: none !important; }
+
+    body.rct2 .skill-tag {
+      background: #000080 !important;
+      color: #ffffff !important;
+      border: 2px solid !important;
+      border-color: #4040c0 #000040 #000040 #4040c0 !important;
+      font-size: 11px !important;
+    }
+
+    body.rct2 .contact-left p { color: #e8f4e8 !important; text-shadow: 1px 1px 0 rgba(0,0,0,0.5); }
+
+    body.rct2 .form-label { color: #ffcc00 !important; text-shadow: 1px 1px 0 #000; }
+
+    body.rct2 .form-input, body.rct2 .form-textarea {
+      background: #ffffff !important;
+      border: 3px solid !important;
+      border-color: #808080 #ffffff #ffffff #808080 !important;
+      color: #000000 !important;
+      box-shadow: inset 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    body.rct2 .form-input:focus, body.rct2 .form-textarea:focus {
+      border-color: #000080 !important;
+      outline: 2px solid #000080;
+    }
+
+    body.rct2 .form-input::placeholder, body.rct2 .form-textarea::placeholder { color: #808080 !important; }
+
+    body.rct2 .form-submit {
+      background: #c0c0c0 !important;
+      color: #000000 !important;
+      border: 3px solid !important;
+      border-color: #ffffff #808080 #808080 #ffffff !important;
+      box-shadow: 2px 2px 0 #000000;
+      cursor: none;
+    }
+
+    body.rct2 .form-submit:hover {
+      background: #000080 !important;
+      color: #ffffff !important;
+      transform: translate(1px,1px) !important;
+      box-shadow: 1px 1px 0 #000000 !important;
+      border-color: #808080 #ffffff #ffffff #808080 !important;
+    }
+
+    body.rct2 .form-note { color: #c8e4c8 !important; text-shadow: 1px 1px 0 rgba(0,0,0,0.4); }
+
+    body.rct2 footer {
+      background: #c0c0c0 !important;
+      border-top: 3px solid !important;
+      border-color: #ffffff !important;
+      box-shadow: inset 0 3px 0 #ffffff;
+    }
+
+    body.rct2 footer p { color: #000000 !important; }
+    body.rct2 .footer-links a { color: #000080 !important; }
+    body.rct2 .footer-links a:hover { color: #0000ff !important; }
+
+    /* RCT2 cursor override */
+    body.rct2 .cursor {
+      background: #ff0000 !important;
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 0 !important;
+      mix-blend-mode: normal !important;
+    }
+
+    body.rct2 .cursor-ring {
+      border-color: #ff0000 !important;
+      border-radius: 0 !important;
+      width: 20px !important;
+      height: 20px !important;
+    }
+
+    /* RCT2 scrollbar */
+    body.rct2 ::-webkit-scrollbar { width: 16px; }
+    body.rct2 ::-webkit-scrollbar-track { background: #c0c0c0; }
+    body.rct2 ::-webkit-scrollbar-thumb {
+      background: #808080;
+      border: 2px solid;
+      border-color: #ffffff #606060 #606060 #ffffff;
+    }
+
+    /* RCT2 vignette overlay — bottom fade so hero bleeds into sections naturally */
+    .rct2-vignette {
+      display: none;
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, transparent 40%, rgba(26,107,58,0.45) 100%),
+        linear-gradient(to bottom, transparent 50%, rgba(26,107,58,0.85) 90%, #1a6b3a 100%);
+    }
+    body.rct2 .rct2-vignette { display: block; }
+
+    /* In RCT2 mode: move canvas inside hero, sections need solid bg to cover canvas */
+    body.rct2 .hero { overflow: hidden; }
+    body.rct2 #rct2-canvas { position: absolute !important; }
+
+    /* Sections must be fully opaque so canvas doesn't show through */
+    body.rct2 section,
+    body.rct2 #about,
+    body.rct2 #experience,
+    body.rct2 #skills,
+    body.rct2 #contact {
+      position: relative;
+      z-index: 10;
+    }
+    body.rct2 #about { background: #245c38 !important; }
+    body.rct2 #skills { background: #2a6640 !important; }
+    body.rct2 footer { position: relative; z-index: 10; }
+    body.rct2 .divider { position: relative; z-index: 10; }
+
+
+    #theme-toggle {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      background: #c0c0c0;
+      color: #000000;
+      border: 3px solid;
+      border-color: #ffffff #808080 #808080 #ffffff;
+      padding: 10px 16px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0;
+      cursor: none;
+      box-shadow: 3px 3px 0 #000000;
+      transition: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    #theme-toggle:hover {
+      background: #d4d4d4;
+    }
+
+    #theme-toggle:active {
+      border-color: #808080 #ffffff #ffffff #808080;
+      box-shadow: 1px 1px 0 #000000;
+      transform: translate(2px, 2px);
+    }
+
+    body.rct2 #theme-toggle {
+      background: #000080;
+      color: #ffffff;
+      border-color: #4040c0 #000040 #000040 #4040c0;
+      box-shadow: 3px 3px 0 #000000;
+    }
+
+    body.rct2 #theme-toggle:hover { background: #0000aa; }
+
+    @keyframes rct2-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    body.rct2 #theme-toggle .toggle-icon {
+      animation: rct2-blink 1s infinite;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--off-white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* CUSTOM CURSOR */
+    .cursor {
+      width: 10px; height: 10px;
+      background: var(--gold);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.15s ease;
+      mix-blend-mode: difference;
+    }
+    .cursor-ring {
+      width: 36px; height: 36px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9998;
+      transition: all 0.12s ease;
+      opacity: 0.5;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 60px;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--off-white);
+      text-decoration: none;
+      opacity: 0.6;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 60px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(26,58,92,0.35) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,168,76,0.08) 0%, transparent 60%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.3s forwards;
+    }
+    .hero-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(72px, 12vw, 160px);
+      line-height: 0.9;
+      letter-spacing: 2px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.5s forwards;
+    }
+    .hero-name span { color: var(--gold); }
+    .hero-subtitle {
+      margin-top: 32px;
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream);
+      max-width: 480px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.8s forwards;
+    }
+    .hero-cta {
+      margin-top: 48px;
+      display: flex;
+      gap: 20px;
+      opacity: 0;
+      animation: fadeUp 0.9s 1s forwards;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--black);
+      padding: 14px 36px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-secondary {
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold);
+      padding: 14px 36px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); transform: translateY(-2px); }
+    .hero-stats {
+      position: absolute;
+      right: 60px;
+      bottom: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      opacity: 0;
+      animation: fadeLeft 1s 1.2s forwards;
+    }
+    .stat-item { text-align: right; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 48px;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-top: 4px;
+    }
+    .scroll-line {
+      position: absolute;
+      bottom: 0; left: 60px;
+      width: 1px; height: 60px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: fadeIn 1s 1.5s forwards;
+      opacity: 0;
+    }
+
+    /* SECTION BASE */
+    section { padding: 120px 60px; }
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(48px, 6vw, 80px);
+      line-height: 1;
+      margin-bottom: 60px;
+    }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(201,168,76,0.15);
+    }
+
+    /* ABOUT */
+    #about { background: var(--black); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-text p {
+      font-size: 17px;
+      line-height: 1.85;
+      color: var(--cream);
+      margin-bottom: 24px;
+    }
+    .about-text p strong { color: var(--gold); font-weight: 500; }
+    .about-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,168,76,0.15);
+      padding: 40px;
+    }
+    .about-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 1px;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 16px; }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 14px;
+      color: var(--cream);
+    }
+    .contact-row .icon {
+      width: 36px; height: 36px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .contact-row a { color: var(--cream); text-decoration: none; transition: color 0.2s; }
+    .contact-row a:hover { color: var(--gold); }
+
+    /* EXPERIENCE */
+    #experience { background: #0d0d0d; }
+    .exp-list { display: flex; flex-direction: column; }
+    .exp-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 40px;
+      padding: 48px 0;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      transition: background 0.3s;
+    }
+    .exp-item:first-child { border-top: 1px solid rgba(201,168,76,0.1); }
+    .exp-meta { padding-top: 6px; }
+    .exp-company {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .exp-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--mid);
+    }
+    .exp-body {}
+    .exp-role {
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--off-white);
+      margin-bottom: 12px;
+    }
+    .exp-desc {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--mid);
+      margin-bottom: 20px;
+    }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .exp-bullets li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--cream);
+      padding-left: 20px;
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    /* SKILLS */
+    #skills { background: var(--black); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .skill-block {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(201,168,76,0.08);
+      padding: 40px 36px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .skill-block:hover {
+      background: rgba(201,168,76,0.05);
+      border-color: rgba(201,168,76,0.3);
+    }
+    .skill-block h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 1px;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--cream);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 6px 12px;
+    }
+
+    /* CONTACT */
+    #contact { background: #0d0d0d; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+    .contact-left p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--mid);
+      margin-bottom: 32px;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+    .form-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .form-input, .form-textarea {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,168,76,0.2);
+      color: var(--off-white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      padding: 14px 18px;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+    .form-input:focus, .form-textarea:focus { border-color: var(--gold); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--mid); }
+    .form-submit {
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      padding: 16px 40px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      cursor: none;
+      transition: background 0.2s, transform 0.2s;
+      align-self: flex-start;
+    }
+    .form-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .form-note {
+      font-size: 12px;
+      color: var(--mid);
+      margin-top: -8px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 40px 60px;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer p {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--mid);
+    }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeLeft {
+      from { opacity: 0; transform: translateX(30px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 20px 30px; }
+      .nav-links { gap: 20px; }
+      .hero { padding: 0 30px 60px; }
+      .hero-stats { display: none; }
+      section { padding: 80px 30px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .exp-item { grid-template-columns: 1fr; gap: 12px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .hero-cta { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- THEME TOGGLE -->
+  <button id="theme-toggle" onclick="toggleTheme()" title="Toggle RollerCoaster Tycoon 2 Theme">
+    <span class="toggle-icon">🎢</span>
+    <span id="toggle-label">RCT2 Mode</span>
+  </button>
+
+  <!-- RCT2 ROLLERCOASTER CANVAS -->
+  <canvas id="rct2-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;display:none;image-rendering:pixelated;opacity:1;"></canvas>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">AS</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" style="position:relative;overflow:hidden;">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="rct2-vignette" id="rct2-vignette"></div>
+    <div class="scroll-line"></div>
+
+    <div style="position:relative; z-index:5;">
+      <p class="hero-tag">Strategic Finance · External CFO · FP&A</p>
+      <h1 class="hero-name">Adam<br><span>Shnitkin</span></h1>
+      <p class="hero-subtitle">Director-level CFO advisor helping founders build financial infrastructure, raise capital, and scale with clarity.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Get in Touch</a>
+        <a href="#experience" class="btn-secondary">View Experience</a>
+      </div>
+      <p id="rct2-pan-hint" style="display:none;margin-top:24px;font-family:'Courier New',monospace;font-size:11px;color:rgba(255,204,0,0.6);letter-spacing:1px;">▸ MOVE MOUSE TO PAN PARK</p>
+    </div>
+
+    <div class="hero-stats" style="position:absolute;z-index:5;right:60px;bottom:80px;">
+      <div class="stat-item">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Years CFO Advisory</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">NYC</div>
+        <div class="stat-label">Based In</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3.76</div>
+        <div class="stat-label">Kelley School GPA</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label">01 — About</div>
+    <h2 class="section-title">The CFO Your<br>Company Needs</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm Adam Shnitkin — a <strong>Director-level External CFO</strong> at KWILL Merchant Advisors, where I serve as a strategic finance partner for high-growth companies and portfolio clients across New York.</p>
+        <p>I specialize in building financial infrastructure from the ground up: designing FP&A systems, leading capital raises, overseeing accounting operations, and translating complex financial data into decisions founders can act on.</p>
+        <p>Whether you're preparing for your first institutional raise, navigating an acquisition, or simply need a financial system that scales — I bring the rigor of investment banking and the agility of an operator.</p>
+        <p>I hold a <strong>B.S. in Finance</strong> from Indiana University's Kelley School of Business, with coursework in Business Analytics.</p>
+      </div>
+      <div class="about-card reveal">
+        <h3>Contact & Connect</h3>
+        <div class="contact-info">
+          <div class="contact-row">
+            <div class="icon">📍</div>
+            <span>New York, NY</span>
+          </div>
+          <div class="contact-row">
+            <div class="icon">✉️</div>
+            <a href="/cdn-cgi/l/email-protection#c180a5a0acb2a9afa8b5aaa8aff8f981a6aca0a8adefa2aeac"><span class="__cf_email__" data-cfemail="d190b5b0bca2b9bfb8a5bab8bfe8e991b6bcb0b8bdffb2bebc">[email&#160;protected]</span></a>
+          </div>
+          <div class="contact-row">
+            <div class="icon">📞</div>
+            <a href="tel:5166408601">(516) 640-8601</a>
+          </div>
+          <div class="contact-row">
+            <div class="icon">💼</div>
+            <a href="https://www.linkedin.com/in/adamshnitkin/" target="_blank">linkedin.com/in/adamshnitkin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-label">02 — Experience</div>
+    <h2 class="section-title">Where I've<br>Done the Work</h2>
+
+    <div class="exp-list">
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-company">KWILL Merchant Advisors</div>
+          <div class="exp-date">Feb 2021 – Present</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">Director — External CFO</div>
+          <div class="exp-desc">Provide external CFO and strategic finance leadership for multiple portfolio companies. Build financial infrastructure, lead FP&A, manage investor reporting, and guide founders through operational and capital-raising decisions.</div>
+          <ul class="exp-bullets">
+            <li>Secured financing for a client's flagship NYC expansion by modeling cash flow needs and lender-ready projections</li>
+            <li>Led acquisition due diligence — producing financial schedules, QoE support, and scenario analyses that informed deal structure</li>
+            <li>Conducted deep-dive ERP architecture evaluation, guiding a client's transition from small-business tools to an enterprise-grade system</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-company">Umoja Health</div>
+          <div class="exp-date">External CFO Support</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">External CFO — Portfolio Client</div>
+          <div class="exp-desc">Embedded CFO support for a high-growth health startup navigating multiple funding rounds and rapid operational scaling.</div>
+          <ul class="exp-bullets">
+            <li>Implemented NetSuite as the enterprise accounting and operating system</li>
+            <li>Built a Snowflake + SQL FP&A reporting tool delivering automated monthly financials, KPIs, and operational metrics</li>
+            <li>Supported multiple capital raises including modeling, diligence support, and investor materials</li>
+            <li>Managed investor relations and reporting, improving transparency and communication cadence</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-company">Metropolitan Cooperative Fund</div>
+          <div class="exp-date">Venture Fund</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">Venture Fund Analyst</div>
+          <div class="exp-desc">Evaluated investment opportunities for a NYC-based venture fund through rigorous financial analysis and market research.</div>
+          <ul class="exp-bullets">
+            <li>Built DCF models and financial analyses to evaluate fund investment opportunities</li>
+            <li>Conducted market research to assess investment viability, identify sector trends, and analyze prospective valuations</li>
+            <li>Created investment memos for committee review and external stakeholders</li>
+            <li>Managed investor relations and reporting, ensuring consistent updates and portfolio transparency</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-company">Metropolitan Capital Bank & Trust</div>
+          <div class="exp-date">Jun 2019 – Jan 2021</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">Investment Banking Consultant</div>
+          <div class="exp-desc">Supported private debt and equity placements through financial modeling and investor development.</div>
+          <ul class="exp-bullets">
+            <li>Built three-statement models, DCFs, and scenario analyses for private placements</li>
+            <li>Developed pitchbooks and conducted investor research across consumer and health sectors</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-label">03 — Skills</div>
+    <h2 class="section-title">Core<br>Competencies</h2>
+    <div class="skills-grid">
+      <div class="skill-block reveal">
+        <h3>Strategic Finance</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">FP&A</span>
+          <span class="skill-tag">Financial Modeling</span>
+          <span class="skill-tag">Budgeting & Forecasting</span>
+          <span class="skill-tag">Cash Management</span>
+          <span class="skill-tag">Capital Raising</span>
+          <span class="skill-tag">Scenario Analysis</span>
+        </div>
+      </div>
+      <div class="skill-block reveal">
+        <h3>Investment & M&A</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">DCF Modeling</span>
+          <span class="skill-tag">Due Diligence</span>
+          <span class="skill-tag">QoE Analysis</span>
+          <span class="skill-tag">Pitchbooks</span>
+          <span class="skill-tag">Investment Memos</span>
+          <span class="skill-tag">Investor Relations</span>
+        </div>
+      </div>
+      <div class="skill-block reveal">
+        <h3>Operations & Systems</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">NetSuite</span>
+          <span class="skill-tag">QuickBooks</span>
+          <span class="skill-tag">Snowflake</span>
+          <span class="skill-tag">ERP Implementation</span>
+          <span class="skill-tag">Accounting Oversight</span>
+          <span class="skill-tag">Systems Design</span>
+        </div>
+      </div>
+      <div class="skill-block reveal">
+        <h3>Data & Analytics</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Excel (Advanced)</span>
+          <span class="skill-tag">KPI Dashboards</span>
+          <span class="skill-tag">Business Analytics</span>
+          <span class="skill-tag">Automated Reporting</span>
+        </div>
+      </div>
+      <div class="skill-block reveal">
+        <h3>CFO Leadership</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">External CFO</span>
+          <span class="skill-tag">Founder Advisory</span>
+          <span class="skill-tag">Board Reporting</span>
+          <span class="skill-tag">Lender Relations</span>
+          <span class="skill-tag">Startup Finance</span>
+        </div>
+      </div>
+      <div class="skill-block reveal">
+        <h3>Education</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Indiana University</span>
+          <span class="skill-tag">Kelley School of Business</span>
+          <span class="skill-tag">B.S. Finance</span>
+          <span class="skill-tag">Business Analytics</span>
+          <span class="skill-tag">GPA 3.76</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">04 — Contact</div>
+    <h2 class="section-title">Let's Work<br>Together</h2>
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <p>Whether you're a founder looking for fractional CFO support, an investor seeking financial diligence expertise, or a company in need of financial infrastructure — I'd love to connect.</p>
+        <p>Reach out via the form or directly at <a href="/cdn-cgi/l/email-protection#4504212428362d2b2c312e2c2b7c7d052228242c296b262a28" style="color:var(--gold);text-decoration:none;"><span class="__cf_email__" data-cfemail="83c2e7e2eef0ebedeaf7e8eaedbabbc3e4eee2eaefade0ecee">[email&#160;protected]</span></a></p>
+        <p style="margin-top:40px; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold);">Based in New York City</p>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" class="form-input" placeholder="Jane Smith" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="jane@company.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Company / Organization</label>
+          <input type="text" class="form-input" placeholder="Your company" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" rows="5" placeholder="Tell me about what you're working on..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleSubmit(this)">Send Message</button>
+        <p class="form-note">I typically respond within 24 hours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Adam Shnitkin — All rights reserved</p>
+    <div class="footer-links">
+      <a href="/cdn-cgi/l/email-protection#165772777b657e787f627d7f782f2e56717b777f7a3875797b">Email</a>
+      <a href="https://www.linkedin.com/in/adamshnitkin/" target="_blank">LinkedIn</a>
+      <a href="tel:5166408601">Phone</a>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // CURSOR
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.left = mx - 5 + 'px';
+      cursor.style.top = my - 5 + 'px';
+    });
+    function animRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = rx - 18 + 'px';
+      ring.style.top = ry - 18 + 'px';
+      requestAnimationFrame(animRing);
+    }
+    animRing();
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(2.5)');
+      el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
+    });
+
+    // SCROLL REVEAL
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // FORM SUBMIT
+    async function handleSubmit(btn) {
+      const inputs = document.querySelectorAll('.form-input, .form-textarea');
+      let valid = true;
+      inputs.forEach(i => { if (!i.value.trim()) valid = false; });
+      if (!valid) {
+        btn.textContent = 'Please Fill All Fields';
+        btn.style.background = '#c0392b';
+        setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; }, 2000);
+        return;
+      }
+
+      const [name, email, company, message] = [...inputs].map(i => i.value.trim());
+
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch('https://formspree.io/f/xgoneyaz', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ name, email, company, message })
+        });
+
+        if (res.ok) {
+          btn.textContent = 'Message Sent ✓';
+          btn.style.background = '#27ae60';
+          inputs.forEach(i => i.value = '');
+          setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; btn.disabled = false; }, 3000);
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        btn.textContent = 'Failed — Please Try Again';
+        btn.style.background = '#c0392b';
+        btn.disabled = false;
+        setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; }, 3000);
+      }
+    }
+
+    // ===== RCT2 ISOMETRIC ROLLERCOASTER ANIMATION =====
+    (function() {
+      const canvas = document.getElementById('rct2-canvas');
+      const ctx = canvas.getContext('2d');
+      let animFrame = null;
+      let built = false;
+      let coasterT = [0, 0.33, 0.66]; // three trains on the main loop
+
+      // ── Isometric helpers ──────────────────────────────────────────
+      // We work in a "world" grid coordinate space (wx, wy, wz).
+      // wx/wy are the flat-ground axes; wz is height.
+      // Classic RCT2 iso projection: 2:1 diamond tiles, viewed from ~45° above.
+      const TILE = 32;   // pixel width of one tile (canvas pixels)
+      function isoX(wx, wy)      { return (wx - wy) * (TILE / 2); }
+      function isoY(wx, wy, wz)  { return (wx + wy) * (TILE / 4) - wz * (TILE / 2); }
+
+      // ── Catmull-Rom path sampler (world coords) ────────────────────
+      function sampleLoop(pts3d, steps) {
+        const out = [];
+        const n = pts3d.length;
+        for (let i = 0; i < steps; i++) {
+          const t  = i / steps;
+          const si = Math.floor(t * n);
+          const lt = t * n - si;
+          const t2 = lt * lt, t3 = lt * lt * lt;
+          const p0 = pts3d[(si - 1 + n) % n];
+          const p1 = pts3d[si % n];
+          const p2 = pts3d[(si + 1) % n];
+          const p3 = pts3d[(si + 2) % n];
+          const wx = 0.5*((2*p1[0])+(-p0[0]+p2[0])*lt+(2*p0[0]-5*p1[0]+4*p2[0]-p3[0])*t2+(-p0[0]+3*p1[0]-3*p2[0]+p3[0])*t3);
+          const wy = 0.5*((2*p1[1])+(-p0[1]+p2[1])*lt+(2*p0[1]-5*p1[1]+4*p2[1]-p3[1])*t2+(-p0[1]+3*p1[1]-3*p2[1]+p3[1])*t3);
+          const wz = 0.5*((2*p1[2])+(-p0[2]+p2[2])*lt+(2*p0[2]-5*p1[2]+4*p2[2]-p3[2])*t2+(-p0[2]+3*p1[2]-3*p2[2]+p3[2])*t3);
+          out.push([wx, wy, wz]);
+        }
+        return out;
+      }
+
+      // ── Coaster path definition ────────────────────────────────────
+      // A sweeping steel coaster: lift hill → big triangle drop → two spiral loops → return
+      // Coords are [wx, wy, wz]  (world units, 1 unit = 1 tile = 32px)
+      const RAW_PATH = [
+        // Station / ground entry
+        [ 2,  12, 0],
+        [ 2,  10, 0],
+        [ 2,   8, 0],
+        // Lift hill — climbs steeply
+        [ 2,   6, 0],
+        [ 2,   4, 1.5],
+        [ 2,   2, 3.5],
+        [ 2,   0, 6],
+        // Peak — top of lift
+        [ 3,  -1, 7],
+        [ 5,  -2, 7],
+        // First big drop down-right
+        [ 8,  -1, 5],
+        [11,   1, 2],
+        [13,   3, 0],
+        // Flat run right
+        [14,   5, 0],
+        [14,   7, 0],
+        // Turn back
+        [13,   9, 0],
+        [12,  11, 0.5],
+        // Loop 1 — small vertical loop (simulate with height oscillation)
+        [10,  12, 0],
+        [ 9,  12, 1.5],
+        [ 8,  11, 3],
+        [ 8,  10, 4],
+        [ 8,   9, 3],
+        [ 8,   8, 1.5],
+        [ 8,   7, 0],
+        // Sweep across
+        [ 7,   9, 0],
+        [ 6,  10, 0],
+        // Loop 2 — wider helix
+        [ 5,  11, 0],
+        [ 4,  11, 1],
+        [ 3,  10, 2],
+        [ 3,   9, 2.5],
+        [ 4,   8, 2],
+        [ 5,   9, 1],
+        [ 5,  10, 0],
+        // Final return to station
+        [ 4,  11, 0],
+        [ 3,  12, 0],
+        [ 2,  12, 0],
+      ];
+      const STEPS = 600;
+      let PATH = [];  // filled in buildScene, offset to center screen
+
+      // ── Scene objects ──────────────────────────────────────────────
+      let trees = [];
+
+      function buildScene() {
+        const W = canvas.width, H = canvas.height;
+
+        // Offset the path so it's centered-ish
+        const offX = W/2 / (TILE/2);   // world offset so iso(0,0) ≈ center-ish
+        const offY = 0;
+        const screenOffX = W * 0.50;
+        const screenOffY = H * 0.45;
+
+        // Pre-compute iso screen points
+        PATH = sampleLoop(RAW_PATH, STEPS).map(([wx, wy, wz]) => {
+          const sx = isoX(wx, wy) + screenOffX;
+          const sy = isoY(wx, wy, wz) + screenOffY;
+          return { sx, sy, wz };
+        });
+        // Add angle to each point
+        for (let i = 0; i < PATH.length; i++) {
+          const next = PATH[(i+1) % PATH.length];
+          const prev = PATH[(i-1+PATH.length) % PATH.length];
+          PATH[i].angle = Math.atan2(next.sy - prev.sy, next.sx - prev.sx);
+        }
+
+        // Trees — scattered in world space, avoid the track area
+        trees = [];
+        const treePos = [
+          [-3,2],[-3,5],[-3,8],[-3,11],[-3,14],
+          [-1,0],[-1,14],
+          [0,2],[0,14],
+          [16,2],[16,5],[16,8],[16,11],
+          [15,0],[15,13],
+          [10,-2],[7,-2],[4,-2],
+          [0,-2],[2,-2],
+          [6,14],[9,14],[12,14],
+        ];
+        treePos.forEach(([wx,wy]) => {
+          trees.push({
+            sx: isoX(wx, wy) + screenOffX,
+            sy: isoY(wx, wy, 0) + screenOffY,
+            size: 10 + (Math.random()*6|0)
+          });
+        });
+
+        built = true;
+      }
+
+      // ── Grass tile grid ────────────────────────────────────────────
+      function drawGrass() {
+        const W = canvas.width, H = canvas.height;
+        const screenOffX = W * 0.50;
+        const screenOffY = H * 0.45;
+
+        for (let wx = -4; wx <= 17; wx++) {
+          for (let wy = -3; wy <= 15; wy++) {
+            const cx = isoX(wx, wy) + screenOffX;
+            const cy = isoY(wx, wy, 0) + screenOffY;
+            // diamond tile
+            ctx.beginPath();
+            ctx.moveTo(cx,          cy - TILE/4);
+            ctx.lineTo(cx + TILE/2, cy);
+            ctx.lineTo(cx,          cy + TILE/4);
+            ctx.lineTo(cx - TILE/2, cy);
+            ctx.closePath();
+            // Checkerboard two greens
+            const even = (wx + wy) % 2 === 0;
+            ctx.fillStyle = even ? '#2e7d32' : '#388e3c';
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(0,0,0,0.18)';
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // ── RCT2-style isometric tree ──────────────────────────────────
+      function drawTree(t) {
+        const x = t.sx|0, y = t.sy|0, s = t.size;
+        // Trunk
+        ctx.fillStyle = '#5D4037';
+        ctx.fillRect(x-1, y, 3, s*0.5|0);
+        // Shadow ellipse under canopy
+        ctx.fillStyle = 'rgba(0,0,0,0.20)';
+        ctx.beginPath();
+        ctx.ellipse(x+1, y + s*0.15, s*0.6, s*0.25, 0, 0, Math.PI*2);
+        ctx.fill();
+        // Dark back canopy
+        ctx.fillStyle = '#1B5E20';
+        ctx.beginPath();
+        ctx.ellipse(x+1, y - s*0.3, s*0.55, s*0.6, 0, 0, Math.PI*2);
+        ctx.fill();
+        // Mid canopy
+        ctx.fillStyle = '#2E7D32';
+        ctx.beginPath();
+        ctx.ellipse(x+1, y - s*0.45, s*0.45, s*0.5, 0, 0, Math.PI*2);
+        ctx.fill();
+        // Bright highlight
+        ctx.fillStyle = '#43A047';
+        ctx.beginPath();
+        ctx.ellipse(x-1, y - s*0.55, s*0.25, s*0.28, -0.4, 0, Math.PI*2);
+        ctx.fill();
+      }
+
+      // ── Support column (vertical blue strut) ──────────────────────
+      function drawSupport(sx, sy, wz) {
+        if (wz < 0.3) return;
+        const groundY = sy + wz * (TILE/2);
+        const colH = wz * (TILE/2);
+        // Main vertical column
+        ctx.fillStyle = '#1565C0';
+        ctx.fillRect(sx - 1, sy, 3, colH);
+        // Highlight left edge
+        ctx.fillStyle = '#42A5F5';
+        ctx.fillRect(sx - 1, sy, 1, colH);
+        // Shadow right edge
+        ctx.fillStyle = '#0D47A1';
+        ctx.fillRect(sx + 1, sy, 1, colH);
+        // Small foot brace
+        ctx.fillStyle = '#0D47A1';
+        ctx.fillRect(sx - 3, groundY - 3, 7, 2);
+      }
+
+      // ── Track rail segment ─────────────────────────────────────────
+      function drawTrackSegment(p0, p1) {
+        const RAIL_OFFSET = 3;
+        const dx = p1.sx - p0.sx, dy = p1.sy - p0.sy;
+        const len = Math.sqrt(dx*dx+dy*dy) || 1;
+        const nx = -dy/len * RAIL_OFFSET, ny = dx/len * RAIL_OFFSET;
+
+        // Tie (cross-sleeper) every ~6th step
+        ctx.strokeStyle = '#E65100';
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        ctx.moveTo(p0.sx - nx*1.4, p0.sy - ny*1.4);
+        ctx.lineTo(p0.sx + nx*1.4, p0.sy + ny*1.4);
+        ctx.stroke();
+
+        // Left rail
+        ctx.strokeStyle = '#FF6D00';
+        ctx.lineWidth = 1.8;
+        ctx.beginPath();
+        ctx.moveTo(p0.sx - nx, p0.sy - ny);
+        ctx.lineTo(p1.sx - nx, p1.sy - ny);
+        ctx.stroke();
+        // Right rail
+        ctx.beginPath();
+        ctx.moveTo(p0.sx + nx, p0.sy + ny);
+        ctx.lineTo(p1.sx + nx, p1.sy + ny);
+        ctx.stroke();
+        // Rail shine highlight
+        ctx.strokeStyle = 'rgba(255,200,100,0.45)';
+        ctx.lineWidth = 0.8;
+        ctx.beginPath();
+        ctx.moveTo(p0.sx - nx*0.6, p0.sy - ny*0.6);
+        ctx.lineTo(p1.sx - nx*0.6, p1.sy - ny*0.6);
+        ctx.stroke();
+      }
+
+      // ── Full track draw: supports first, then rails on top ─────────
+      function drawTrack() {
+        const stride = 4; // draw every Nth point for supports/rails
+
+        // 1. Support columns (drawn first / behind)
+        for (let i = 0; i < PATH.length; i += stride) {
+          const p = PATH[i];
+          if (p.wz > 0.3) drawSupport(p.sx, p.sy, p.wz);
+        }
+
+        // 2. Track rails
+        for (let i = 0; i < PATH.length; i += 2) {
+          const p0 = PATH[i];
+          const p1 = PATH[(i+2) % PATH.length];
+          drawTrackSegment(p0, p1);
+        }
+      }
+
+      // ── Coaster train car ──────────────────────────────────────────
+      function drawCar(p, isLead) {
+        const { sx, sy, angle } = p;
+        ctx.save();
+        ctx.translate(sx, sy);
+        ctx.rotate(angle);
+
+        const W2 = 7, H2 = 5;
+
+        // Drop shadow
+        ctx.fillStyle = 'rgba(0,0,0,0.30)';
+        ctx.fillRect(-W2+1, H2-1, W2*2, 3);
+
+        // Car body — dark orange/brown base (undercarriage)
+        ctx.fillStyle = '#BF360C';
+        ctx.fillRect(-W2, -H2+2, W2*2, H2+2);
+
+        // Top surface — brighter orange
+        ctx.fillStyle = '#FF6D00';
+        ctx.fillRect(-W2, -H2, W2*2, H2);
+
+        // Highlight strip along top
+        ctx.fillStyle = '#FF8F00';
+        ctx.fillRect(-W2+1, -H2, W2*2-2, 2);
+
+        // Passenger seats (tiny dark rectangles)
+        ctx.fillStyle = '#1A237E';
+        ctx.fillRect(-4, -H2+2, 3, 3);
+        ctx.fillRect( 1, -H2+2, 3, 3);
+
+        // Wheels
+        ctx.fillStyle = '#212121';
+        ctx.fillRect(-W2,   H2-1, 4, 3);
+        ctx.fillRect( W2-4, H2-1, 4, 3);
+        // Wheel highlight
+        ctx.fillStyle = '#757575';
+        ctx.fillRect(-W2+1, H2, 2, 1);
+        ctx.fillRect( W2-3, H2, 2, 1);
+
+        if (isLead) {
+          // Nose cone
+          ctx.fillStyle = '#E65100';
+          ctx.beginPath();
+          ctx.moveTo(W2,   -H2);
+          ctx.lineTo(W2+5,  0);
+          ctx.lineTo(W2,    H2);
+          ctx.closePath();
+          ctx.fill();
+          // Headlight
+          ctx.fillStyle = '#FFEE58';
+          ctx.fillRect(W2+1, -2, 3, 3);
+        }
+
+        ctx.restore();
+      }
+
+      // ── Draw one full train at position t (0..1) ───────────────────
+      function drawTrain(t, numCars) {
+        const N = PATH.length;
+        const CAR_GAP = 0.018;
+        for (let c = numCars - 1; c >= 0; c--) {
+          // draw from last car first so front overlaps back
+          const idx = Math.floor(((t - c * CAR_GAP + 10) % 1) * N);
+          const p = PATH[idx % N];
+          drawCar(p, c === 0);
+        }
+      }
+
+      // ── Main render loop ───────────────────────────────────────────
+      const SPEEDS = [0.00065, 0.00060, 0.00055];
+      const CAR_COUNTS = [6, 5, 5];
+
+      function loop() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        if (!built) { animFrame = requestAnimationFrame(loop); return; }
+
+        // Smooth parallax interpolation
+        mouseParallaxX += (targetParallaxX - mouseParallaxX) * 0.06;
+        mouseParallaxY += (targetParallaxY - mouseParallaxY) * 0.06;
+
+        ctx.save();
+        ctx.translate(mouseParallaxX, mouseParallaxY);
+
+        // Grass ground
+        drawGrass();
+
+        // Trees (behind track)
+        trees.slice().sort((a,b) => a.sy - b.sy).forEach(drawTree);
+
+        // Track (supports + rails)
+        drawTrack();
+
+        // Trains
+        for (let i = 0; i < coasterT.length; i++) {
+          coasterT[i] = (coasterT[i] + SPEEDS[i]) % 1;
+          drawTrain(coasterT[i], CAR_COUNTS[i]);
+        }
+
+        ctx.restore();
+
+        animFrame = requestAnimationFrame(loop);
+      }
+
+      function resize() {
+        const hero = canvas.closest('.hero') || document.querySelector('.hero');
+        canvas.width  = hero ? hero.offsetWidth  : window.innerWidth;
+        canvas.height = hero ? hero.offsetHeight : window.innerHeight;
+      }
+
+      // Mouse parallax offset for interactive pan
+      let mouseParallaxX = 0, mouseParallaxY = 0;
+      let targetParallaxX = 0, targetParallaxY = 0;
+
+      document.addEventListener('mousemove', (e) => {
+        if (!document.body.classList.contains('rct2')) return;
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+        const rect = hero.getBoundingClientRect();
+        // Only apply parallax when hovering hero
+        if (e.clientY < rect.bottom && e.clientY > rect.top) {
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          targetParallaxX = (e.clientX - cx) / rect.width * 60;
+          targetParallaxY = (e.clientY - cy) / rect.height * 30;
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        resize();
+        buildScene();
+      });
+
+      function startRCT2() {
+        canvas.style.display = 'block';
+        // Place canvas inside hero
+        const hero = document.querySelector('.hero');
+        if (hero && canvas.parentElement !== hero) {
+          hero.insertBefore(canvas, hero.firstChild);
+        }
+        // Reset parallax
+        mouseParallaxX = 0; mouseParallaxY = 0;
+        targetParallaxX = 0; targetParallaxY = 0;
+        resize();
+        buildScene();
+        if (!animFrame) loop();
+      }
+
+      function stopRCT2() {
+        canvas.style.display = 'none';
+        if (animFrame) { cancelAnimationFrame(animFrame); animFrame = null; }
+      }
+
+      window.startRCT2Animation = startRCT2;
+      window.stopRCT2Animation  = stopRCT2;
+
+      document.addEventListener('DOMContentLoaded', () => {
+        if (document.body.classList.contains('rct2')) startRCT2();
+      });
+    })();
+
+    // THEME TOGGLE
+    function toggleTheme() {
+      const body = document.body;
+      const label = document.getElementById('toggle-label');
+      const hint = document.getElementById('rct2-pan-hint');
+      const isRCT2 = body.classList.toggle('rct2');
+      if (isRCT2) {
+        label.textContent = '← Classic Mode';
+        document.title = '🎢 Adam Shnitkin — RCT2 Edition';
+        if (hint) hint.style.display = 'block';
+        window.startRCT2Animation && window.startRCT2Animation();
+      } else {
+        label.textContent = 'RCT2 Mode';
+        document.title = 'Adam Shnitkin — Strategic Finance & CFO Leadership';
+        if (hint) hint.style.display = 'none';
+        window.stopRCT2Animation && window.stopRCT2Animation();
+      }
+      try { localStorage.setItem('theme', isRCT2 ? 'rct2' : 'classic'); } catch(e) {}
+    }
+
+    // Restore saved theme
+    (function() {
+      try {
+        if (localStorage.getItem('theme') === 'rct2') {
+          document.body.classList.add('rct2');
+          const label = document.getElementById('toggle-label');
+          if (label) label.textContent = '← Classic Mode';
+          document.title = '🎢 Adam Shnitkin — RCT2 Edition';
+          // Animation auto-starts via DOMContentLoaded listener
+        }
+      } catch(e) {}
+    })();
+
+  </script>
+</body>
+</html>
