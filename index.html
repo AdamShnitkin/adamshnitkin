@@ -802,8 +802,11 @@
       padding: 40px 60px;
       border-top: 1px solid rgba(201,168,76,0.1);
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      gap: 16px;
+      text-align: center;
     }
     footer p {
       font-family: 'DM Mono', monospace;
@@ -855,7 +858,7 @@
       .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
       .skills-grid { grid-template-columns: 1fr 1fr; }
       .exp-item { grid-template-columns: 1fr; gap: 12px; }
-      footer { flex-direction: column; gap: 16px; text-align: center; }
+      footer { gap: 12px; }
     }
     @media (max-width: 600px) {
       .skills-grid { grid-template-columns: 1fr; }
@@ -943,10 +946,6 @@
           <div class="contact-row">
             <div class="icon">✉️</div>
             <a href="/cdn-cgi/l/email-protection#c180a5a0acb2a9afa8b5aaa8aff8f981a6aca0a8adefa2aeac"><span class="__cf_email__" data-cfemail="d190b5b0bca2b9bfb8a5bab8bfe8e991b6bcb0b8bdffb2bebc">[email&#160;protected]</span></a>
-          </div>
-          <div class="contact-row">
-            <div class="icon">📞</div>
-            <a href="tel:5166408601">(516) 640-8601</a>
           </div>
           <div class="contact-row">
             <div class="icon">💼</div>
@@ -1148,7 +1147,6 @@
     <div class="footer-links">
       <a href="/cdn-cgi/l/email-protection#165772777b657e787f627d7f782f2e56717b777f7a3875797b">Email</a>
       <a href="https://www.linkedin.com/in/adamshnitkin/" target="_blank">LinkedIn</a>
-      <a href="tel:5166408601">Phone</a>
     </div>
   </footer>
 
