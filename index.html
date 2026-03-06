@@ -38,19 +38,10 @@
       border-radius: 0 !important;
     }
 
-    /* RCT2 tiled grass background */
+    /* RCT2 tiled grass background — only visible behind hero canvas */
     body.rct2 {
-      background-image:
-        repeating-linear-gradient(
-          45deg,
-          rgba(0,0,0,0.05) 0px, rgba(0,0,0,0.05) 2px,
-          transparent 2px, transparent 20px
-        ),
-        repeating-linear-gradient(
-          -45deg,
-          rgba(0,0,0,0.05) 0px, rgba(0,0,0,0.05) 2px,
-          transparent 2px, transparent 20px
-        ) !important;
+      background: #245c38 !important;
+      background-image: none !important;
     }
 
     body.rct2 nav {
@@ -86,8 +77,13 @@
       border-color: #808080 #ffffff #ffffff #808080 !important;
     }
 
+    body.rct2 .hero-bg,
+    body.rct2 .hero-grid {
+      display: none !important;
+    }
+
     body.rct2 .hero {
-      background: #1a6b3a !important;
+      background: transparent !important;
       padding-bottom: 60px;
     }
 
@@ -320,7 +316,38 @@
       border-color: #ffffff #606060 #606060 #ffffff;
     }
 
-    /* ===== THEME TOGGLE BUTTON ===== */
+    /* RCT2 vignette overlay — bottom fade so hero bleeds into sections naturally */
+    .rct2-vignette {
+      display: none;
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, transparent 40%, rgba(26,107,58,0.45) 100%),
+        linear-gradient(to bottom, transparent 50%, rgba(26,107,58,0.85) 90%, #1a6b3a 100%);
+    }
+    body.rct2 .rct2-vignette { display: block; }
+
+    /* In RCT2 mode: move canvas inside hero, sections need solid bg to cover canvas */
+    body.rct2 .hero { overflow: hidden; }
+    body.rct2 #rct2-canvas { position: absolute !important; }
+
+    /* Sections must be fully opaque so canvas doesn't show through */
+    body.rct2 section,
+    body.rct2 #about,
+    body.rct2 #experience,
+    body.rct2 #skills,
+    body.rct2 #contact {
+      position: relative;
+      z-index: 10;
+    }
+    body.rct2 #about { background: #245c38 !important; }
+    body.rct2 #skills { background: #2a6640 !important; }
+    body.rct2 footer { position: relative; z-index: 10; }
+    body.rct2 .divider { position: relative; z-index: 10; }
+
+
     #theme-toggle {
       position: fixed;
       bottom: 28px;
@@ -848,7 +875,7 @@
   </button>
 
   <!-- RCT2 ROLLERCOASTER CANVAS -->
-  <canvas id="rct2-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;display:none;image-rendering:pixelated;opacity:0.70;"></canvas>
+  <canvas id="rct2-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;display:none;image-rendering:pixelated;opacity:1;"></canvas>
 
   <!-- NAV -->
   <nav>
@@ -862,12 +889,13 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" style="position:relative;overflow:hidden;">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
+    <div class="rct2-vignette" id="rct2-vignette"></div>
     <div class="scroll-line"></div>
 
-    <div style="position:relative;">
+    <div style="position:relative; z-index:5;">
       <p class="hero-tag">Strategic Finance · External CFO · FP&A</p>
       <h1 class="hero-name">Adam<br><span>Shnitkin</span></h1>
       <p class="hero-subtitle">Director-level CFO advisor helping founders build financial infrastructure, raise capital, and scale with clarity.</p>
@@ -875,9 +903,10 @@
         <a href="#contact" class="btn-primary">Get in Touch</a>
         <a href="#experience" class="btn-secondary">View Experience</a>
       </div>
+      <p id="rct2-pan-hint" style="display:none;margin-top:24px;font-family:'Courier New',monospace;font-size:11px;color:rgba(255,204,0,0.6);letter-spacing:1px;">▸ MOVE MOUSE TO PAN PARK</p>
     </div>
 
-    <div class="hero-stats">
+    <div class="hero-stats" style="position:absolute;z-index:5;right:60px;bottom:80px;">
       <div class="stat-item">
         <div class="stat-num">5+</div>
         <div class="stat-label">Years CFO Advisory</div>
@@ -1155,7 +1184,7 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // FORM SUBMIT
-    function handleSubmit(btn) {
+    async function handleSubmit(btn) {
       const inputs = document.querySelectorAll('.form-input, .form-textarea');
       let valid = true;
       inputs.forEach(i => { if (!i.value.trim()) valid = false; });
@@ -1165,10 +1194,33 @@
         setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; }, 2000);
         return;
       }
-      btn.textContent = 'Message Sent ✓';
-      btn.style.background = '#27ae60';
-      inputs.forEach(i => i.value = '');
-      setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; }, 3000);
+
+      const [name, email, company, message] = [...inputs].map(i => i.value.trim());
+
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch('https://formspree.io/f/xgoneyaz', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ name, email, company, message })
+        });
+
+        if (res.ok) {
+          btn.textContent = 'Message Sent ✓';
+          btn.style.background = '#27ae60';
+          inputs.forEach(i => i.value = '');
+          setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; btn.disabled = false; }, 3000);
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        btn.textContent = 'Failed — Please Try Again';
+        btn.style.background = '#c0392b';
+        btn.disabled = false;
+        setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; }, 3000);
+      }
     }
 
     // ===== RCT2 ISOMETRIC ROLLERCOASTER ANIMATION =====
@@ -1515,11 +1567,17 @@
 
         if (!built) { animFrame = requestAnimationFrame(loop); return; }
 
+        // Smooth parallax interpolation
+        mouseParallaxX += (targetParallaxX - mouseParallaxX) * 0.06;
+        mouseParallaxY += (targetParallaxY - mouseParallaxY) * 0.06;
+
+        ctx.save();
+        ctx.translate(mouseParallaxX, mouseParallaxY);
+
         // Grass ground
         drawGrass();
 
         // Trees (behind track)
-        // Sort by sy so closer trees draw on top
         trees.slice().sort((a,b) => a.sy - b.sy).forEach(drawTree);
 
         // Track (supports + rails)
@@ -1531,13 +1589,34 @@
           drawTrain(coasterT[i], CAR_COUNTS[i]);
         }
 
+        ctx.restore();
+
         animFrame = requestAnimationFrame(loop);
       }
 
       function resize() {
-        canvas.width  = window.innerWidth;
-        canvas.height = window.innerHeight;
+        const hero = canvas.closest('.hero') || document.querySelector('.hero');
+        canvas.width  = hero ? hero.offsetWidth  : window.innerWidth;
+        canvas.height = hero ? hero.offsetHeight : window.innerHeight;
       }
+
+      // Mouse parallax offset for interactive pan
+      let mouseParallaxX = 0, mouseParallaxY = 0;
+      let targetParallaxX = 0, targetParallaxY = 0;
+
+      document.addEventListener('mousemove', (e) => {
+        if (!document.body.classList.contains('rct2')) return;
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+        const rect = hero.getBoundingClientRect();
+        // Only apply parallax when hovering hero
+        if (e.clientY < rect.bottom && e.clientY > rect.top) {
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          targetParallaxX = (e.clientX - cx) / rect.width * 60;
+          targetParallaxY = (e.clientY - cy) / rect.height * 30;
+        }
+      });
 
       window.addEventListener('resize', () => {
         resize();
@@ -1546,6 +1625,14 @@
 
       function startRCT2() {
         canvas.style.display = 'block';
+        // Place canvas inside hero
+        const hero = document.querySelector('.hero');
+        if (hero && canvas.parentElement !== hero) {
+          hero.insertBefore(canvas, hero.firstChild);
+        }
+        // Reset parallax
+        mouseParallaxX = 0; mouseParallaxY = 0;
+        targetParallaxX = 0; targetParallaxY = 0;
         resize();
         buildScene();
         if (!animFrame) loop();
@@ -1568,14 +1655,17 @@
     function toggleTheme() {
       const body = document.body;
       const label = document.getElementById('toggle-label');
+      const hint = document.getElementById('rct2-pan-hint');
       const isRCT2 = body.classList.toggle('rct2');
       if (isRCT2) {
         label.textContent = '← Classic Mode';
         document.title = '🎢 Adam Shnitkin — RCT2 Edition';
+        if (hint) hint.style.display = 'block';
         window.startRCT2Animation && window.startRCT2Animation();
       } else {
         label.textContent = 'RCT2 Mode';
         document.title = 'Adam Shnitkin — Strategic Finance & CFO Leadership';
+        if (hint) hint.style.display = 'none';
         window.stopRCT2Animation && window.stopRCT2Animation();
       }
       try { localStorage.setItem('theme', isRCT2 ? 'rct2' : 'classic'); } catch(e) {}
