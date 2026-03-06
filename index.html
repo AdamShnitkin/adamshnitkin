@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adam Shnitkin — Strategic Finance & CFO Leadership</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --off-white: #f2ede6;
+      --cream: #e8e0d4;
+      --gold: #c9a84c;
+      --gold-light: #e2c078;
+      --mid: #6b6560;
+      --accent: #1a3a5c;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--off-white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* CUSTOM CURSOR */
+    .cursor {
+      width: 10px; height: 10px;
+      background: var(--gold);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.15s ease;
+      mix-blend-mode: difference;
+    }
+    .cursor-ring {
+      width: 36px; height: 36px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9998;
+      transition: all 0.12s ease;
+      opacity: 0.5;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 60px;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--off-white);
+      text-decoration: none;
+      opacity: 0.6;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 60px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(26,58,92,0.35) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,168,76,0.08) 0%, transparent 60%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.3s forwards;
+    }
+    .hero-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(72px, 12vw, 160px);
+      line-height: 0.9;
+      letter-spacing: 2px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.5s forwards;
+    }
+    .hero-name span { color: var(--gold); }
+    .hero-subtitle {
+      margin-top: 32px;
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream);
+      max-width: 480px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.8s forwards;
+    }
+    .hero-cta {
+      margin-top: 48px;
+      display: flex;
+      gap: 20px;
+      opacity: 0;
+      animation: fadeUp 0.9s 1s forwards;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--black);
+      padding: 14px 36px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-secondary {
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold);
+      padding: 14px 36px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); transform: translateY(-2px); }
+    .hero-stats {
+      position: absolute;
+      right: 60px;
+      bottom: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      opacity: 0;
+      animation: fadeLeft 1s 1.2s forwards;
+    }
+    .stat-item { text-align: right; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 48px;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-top: 4px;
+    }
+    .scroll-line {
+      position: absolute;
+      bottom: 0; left: 60px;
+      width: 1px; height: 60px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: fadeIn 1s 1.5s forwards;
+      opacity: 0;
+    }
+
+    /* SECTION BASE */
+    section { padding: 120px 60px; }
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(48px, 6vw, 80px);
+      line-height: 1;
+      margin-bottom: 60px;
+    }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(201,168,76,0.15);
+    }
+
+    /* ABOUT */
+    #about { background: var(--black); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-text p {
+      font-size: 17px;
+      line-height: 1.85;
+      color: var(--cream);
+      margin-bottom: 24px;
+    }
+    .about-text p strong { color: var(--gold); font-weight: 500; }
+    .about-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,168,76,0.15);
+      padding: 40px;
+    }
+    .about-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 1px;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 16px; }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 14px;
+      color: var(--cream);
+    }
+    .contact-row .icon {
+      width: 36px; height: 36px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .contact-row a { color: var(--cream); text-decoration: none; transition: color 0.2s; }
+    .contact-row a:hover { color: var(--gold); }
+
+    /* EXPERIENCE */
+    #experience { background: #0d0d0d; }
+    .exp-list { display: flex; flex-direction: column; }
+    .exp-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 40px;
+      padding: 48px 0;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      transition: background 0.3s;
+    }
+    .exp-item:first-child { border-top: 1px solid rgba(201,168,76,0.1); }
+    .exp-meta { padding-top: 6px; }
+    .exp-company {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .exp-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--mid);
+    }
+    .exp-body {}
+    .exp-role {
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--off-white);
+      margin-bottom: 12px;
+    }
+    .exp-desc {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--mid);
+      margin-bottom: 20px;
+    }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .exp-bullets li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--cream);
+      padding-left: 20px;
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    /* SKILLS */
+    #skills { background: var(--black); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .skill-block {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(201,168,76,0.08);
+      padding: 40px 36px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .skill-block:hover {
+      background: rgba(201,168,76,0.05);
+      border-color: rgba(201,168,76,0.3);
+    }
+    .skill-block h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 1px;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--cream);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 6px 12px;
+    }
+
+    /* CONTACT */
+    #contact { background: #0d0d0d; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+    .contact-left p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--mid);
+      margin-bottom: 32px;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+    .form-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .form-input, .form-textarea {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,168,76,0.2);
+      color: var(--off-white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      padding: 14px 18px;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+    .form-input:focus, .form-textarea:focus { border-color: var(--gold); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--mid); }
+    .form-submit {
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      padding: 16px 40px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      cursor: none;
+      transition: background 0.2s, transform 0.2s;
+      align-self: flex-start;
+    }
+    .form-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .form-note {
+      font-size: 12px;
+      color: var(--mid);
+      margin-top: -8px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 40px 60px;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer p {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--mid);
+    }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeLeft {
+      from { opacity: 0; transform: translateX(30px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 20px 30px; }
+      .nav-links { gap: 20px; }
+      .hero { padding: 0 30px 60px; }
+      .hero-stats { display: none; }
+      section { padding: 80px 30px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .exp-item { grid-template-columns: 1fr; gap: 12px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .hero-cta { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">AS</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="scroll-line"></div>
+
+    <div style="position:relative;">
+      <p class="hero-tag">Strategic Finance · External CFO · FP&A</p>
+      <h1 class="hero-name">Adam<br><span>Shnitkin</span></h1>
+      <p class="hero-subtitle">Director-level CFO advisor helping founders build financial infrastructure, raise capital, and scale with clarity.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Get in Touch</a>
+        <a href="#experience" class="btn-secondary">View Experience</a>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Years CFO Advisory</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">NYC</div>
+        <div class="stat-label">Based In</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3.76</div>
+        <div class="stat-label">Kelley School GPA</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label">01 — About</div>
+    <h2 class="section-title">The CFO Your<br>Company Needs</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm Adam Shnitkin — a <strong>Director-level External CFO</strong> at KWILL Merchant Advisors, where I serve as a strategic finance partner for high-growth companies and portfolio clients across New York.</p>
+        <p>I specialize in building financial infrastructure from the ground up: designing FP&A systems, leading capital raises, overseeing accounting operations, and translating complex financial data into decisions founders can act on.</p>
+        <p>Whether you're preparing for your first institutional raise, navigating an acquisition, or simply need a financial system that scales — I bring the rigor of investment banking and the agility of an operator.</p>
+        <p>I hold a <strong>B.S. in Finance</strong> from Indiana University's Kelley School of Business, with coursework in Business Analytics.</p>
+      </div>
+      <div class="about-card reveal">
+        <h3>Contact & Connect</h3>
+        <div class="contact-info">
+          <div class="contact-row">
+            <div class="icon">📍</div>
+            <span>New York, NY</span>
+          </div>
+          <div class="contact-row">
+            <div class="icon">✉️</div>
+            <a href="mailto:Adamshnitkin98@gmail.com">Adamshnitkin98@gmail.com</a>
+          </div>
+          <div class="contact-row">
+            <div class="icon">📞</div>
+            <a href="tel:5166408601">(516) 640-8601</a>
+          </div>
+          <div class="contact-row">
+            <div class="icon">💼</div>
+            <a href="https://www.linkedin.com/in/adamshnitkin/" target="_blank">linkedin.com/in/adamshnitkin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-label">02 — Experience</div>
+    <h2 class="section-title">Where I've<br>Done the Work</h2>
+
+    <div class="exp-list">
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-company">KWILL Merchant Advisors</div>
+          <div class="exp-date">Feb 2021 – Present</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">Director — External CFO</div>
+          <div class="exp-desc">Provide external CFO and strategic finance leadership for multiple portfolio companies. Build financial infrastructure, lead FP&A, manage investor reporting, and guide founders through operational and capital-raising decisions.</div>
+          <ul class="exp-bullets">
+            <li>Secured financing for a client's flagship NYC expansion by modeling cash flow needs and lender-ready projections</li>
+            <li>Led acquisition due diligence — producing financial schedules, QoE support, and scenario analyses that informed deal structure</li>
+            <li>Conducted deep-dive ERP architecture evaluation, guiding a client's transition from small-business tools to an enterprise-grade system</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-company">Umoja Health</div>
+          <div class="exp-date">External CFO Support</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">External CFO — Portfolio Client</div>
+          <div class="exp-desc">Embedded CFO support for a high-growth health startup navigating multiple funding rounds and rapid operational scaling.</div>
+          <ul class="exp-bullets">
+            <li>Implemented NetSuite as the enterprise accounting and operating system</li>
+            <li>Built a Snowflake + SQL FP&A reporting tool delivering automated monthly financials, KPIs, and operational metrics</li>
+            <li>Supported multiple capital raises including modeling, diligence support, and investor materials</li>
+            <li>Managed investor relations and reporting, improving transparency and communication cadence</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-company">Metropolitan Cooperative Fund</div>
+          <div class="exp-date">Venture Fund</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">Venture Fund Analyst</div>
+          <div class="exp-desc">Evaluated investment opportunities for a NYC-based venture fund through rigorous financial analysis and market research.</div>
+          <ul class="exp-bullets">
+            <li>Built DCF models and financial analyses to evaluate fund investment opportunities</li>
+            <li>Conducted market research to assess investment viability, identify sector trends, and analyze prospective valuations</li>
+            <li>Created investment memos for committee review and external stakeholders</li>
+            <li>Managed investor relations and reporting, ensuring consistent updates and portfolio transparency</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-company">Metropolitan Capital Bank & Trust</div>
+          <div class="exp-date">Jun 2019 – Jan 2021</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">Investment Banking Consultant</div>
+          <div class="exp-desc">Supported private debt and equity placements through financial modeling and investor development.</div>
+          <ul class="exp-bullets">
+            <li>Built three-statement models, DCFs, and scenario analyses for private placements</li>
+            <li>Developed pitchbooks and conducted investor research across consumer and health sectors</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-label">03 — Skills</div>
+    <h2 class="section-title">Core<br>Competencies</h2>
+    <div class="skills-grid">
+      <div class="skill-block reveal">
+        <h3>Strategic Finance</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">FP&A</span>
+          <span class="skill-tag">Financial Modeling</span>
+          <span class="skill-tag">Budgeting & Forecasting</span>
+          <span class="skill-tag">Cash Management</span>
+          <span class="skill-tag">Capital Raising</span>
+          <span class="skill-tag">Scenario Analysis</span>
+        </div>
+      </div>
+      <div class="skill-block reveal">
+        <h3>Investment & M&A</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">DCF Modeling</span>
+          <span class="skill-tag">Due Diligence</span>
+          <span class="skill-tag">QoE Analysis</span>
+          <span class="skill-tag">Pitchbooks</span>
+          <span class="skill-tag">Investment Memos</span>
+          <span class="skill-tag">Investor Relations</span>
+        </div>
+      </div>
+      <div class="skill-block reveal">
+        <h3>Operations & Systems</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">NetSuite</span>
+          <span class="skill-tag">QuickBooks</span>
+          <span class="skill-tag">Snowflake</span>
+          <span class="skill-tag">ERP Implementation</span>
+          <span class="skill-tag">Accounting Oversight</span>
+          <span class="skill-tag">Systems Design</span>
+        </div>
+      </div>
+      <div class="skill-block reveal">
+        <h3>Data & Analytics</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Excel (Advanced)</span>
+          <span class="skill-tag">KPI Dashboards</span>
+          <span class="skill-tag">Business Analytics</span>
+          <span class="skill-tag">Automated Reporting</span>
+        </div>
+      </div>
+      <div class="skill-block reveal">
+        <h3>CFO Leadership</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">External CFO</span>
+          <span class="skill-tag">Founder Advisory</span>
+          <span class="skill-tag">Board Reporting</span>
+          <span class="skill-tag">Lender Relations</span>
+          <span class="skill-tag">Startup Finance</span>
+        </div>
+      </div>
+      <div class="skill-block reveal">
+        <h3>Education</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Indiana University</span>
+          <span class="skill-tag">Kelley School of Business</span>
+          <span class="skill-tag">B.S. Finance</span>
+          <span class="skill-tag">Business Analytics</span>
+          <span class="skill-tag">GPA 3.76</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">04 — Contact</div>
+    <h2 class="section-title">Let's Work<br>Together</h2>
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <p>Whether you're a founder looking for fractional CFO support, an investor seeking financial diligence expertise, or a company in need of financial infrastructure — I'd love to connect.</p>
+        <p>Reach out via the form or directly at <a href="mailto:Adamshnitkin98@gmail.com" style="color:var(--gold);text-decoration:none;">Adamshnitkin98@gmail.com</a></p>
+        <p style="margin-top:40px; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold);">Based in New York City</p>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" class="form-input" placeholder="Jane Smith" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="jane@company.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Company / Organization</label>
+          <input type="text" class="form-input" placeholder="Your company" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" rows="5" placeholder="Tell me about what you're working on..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleSubmit(this)">Send Message</button>
+        <p class="form-note">I typically respond within 24 hours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Adam Shnitkin — All rights reserved</p>
+    <div class="footer-links">
+      <a href="mailto:Adamshnitkin98@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/adamshnitkin/" target="_blank">LinkedIn</a>
+      <a href="tel:5166408601">Phone</a>
+    </div>
+  </footer>
+
+  <script>
+    // CURSOR
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.left = mx - 5 + 'px';
+      cursor.style.top = my - 5 + 'px';
+    });
+    function animRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = rx - 18 + 'px';
+      ring.style.top = ry - 18 + 'px';
+      requestAnimationFrame(animRing);
+    }
+    animRing();
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(2.5)');
+      el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
+    });
+
+    // SCROLL REVEAL
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // FORM SUBMIT
+    function handleSubmit(btn) {
+      const inputs = document.querySelectorAll('.form-input, .form-textarea');
+      let valid = true;
+      inputs.forEach(i => { if (!i.value.trim()) valid = false; });
+      if (!valid) {
+        btn.textContent = 'Please Fill All Fields';
+        btn.style.background = '#c0392b';
+        setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; }, 2000);
+        return;
+      }
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = '#2ecc71';
+      btn.disabled = true;
+      inputs.forEach(i => i.value = '');
+      setTimeout(() => {
+        btn.textContent = 'Send Message';
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
