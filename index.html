@@ -19,6 +19,359 @@
       --accent: #1a3a5c;
     }
 
+    /* ===== RCT2 THEME ===== */
+    body.rct2 {
+      --black: #1a6b3a;
+      --off-white: #ffffff;
+      --cream: #e8f4e8;
+      --gold: #ffcc00;
+      --gold-light: #ffdd44;
+      --mid: #4a7a5a;
+      --accent: #006688;
+      background: #1a6b3a !important;
+      font-family: 'Courier New', monospace !important;
+      image-rendering: pixelated;
+    }
+
+    body.rct2 * {
+      font-family: 'Courier New', monospace !important;
+      border-radius: 0 !important;
+    }
+
+    /* RCT2 tiled grass background */
+    body.rct2 {
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          rgba(0,0,0,0.05) 0px, rgba(0,0,0,0.05) 2px,
+          transparent 2px, transparent 20px
+        ),
+        repeating-linear-gradient(
+          -45deg,
+          rgba(0,0,0,0.05) 0px, rgba(0,0,0,0.05) 2px,
+          transparent 2px, transparent 20px
+        ) !important;
+    }
+
+    body.rct2 nav {
+      background: #c0c0c0 !important;
+      border-bottom: 3px solid #808080 !important;
+      border-top: 3px solid #ffffff !important;
+      backdrop-filter: none !important;
+      box-shadow: inset -2px -2px 0 #808080, inset 2px 2px 0 #ffffff;
+    }
+
+    body.rct2 .nav-logo {
+      color: #000080 !important;
+      font-size: 18px !important;
+      font-weight: bold !important;
+      letter-spacing: 1px !important;
+      text-shadow: 1px 1px 0 #ffffff;
+    }
+
+    body.rct2 .nav-links a {
+      color: #000000 !important;
+      opacity: 1 !important;
+      font-size: 12px !important;
+      letter-spacing: 0 !important;
+      background: #c0c0c0;
+      padding: 4px 10px;
+      border: 2px solid;
+      border-color: #ffffff #808080 #808080 #ffffff;
+    }
+
+    body.rct2 .nav-links a:hover {
+      background: #000080 !important;
+      color: #ffffff !important;
+      border-color: #808080 #ffffff #ffffff #808080 !important;
+    }
+
+    body.rct2 .hero {
+      background: #1a6b3a !important;
+      padding-bottom: 60px;
+    }
+
+    body.rct2 .hero-bg {
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(0,102,136,0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(255,204,0,0.1) 0%, transparent 60%) !important;
+    }
+
+    body.rct2 .hero-grid {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px) !important;
+      background-size: 32px 32px !important;
+    }
+
+    body.rct2 .hero-tag {
+      color: #ffcc00 !important;
+      font-size: 13px !important;
+      letter-spacing: 1px !important;
+      text-shadow: 1px 1px 0 #000000;
+    }
+
+    body.rct2 .hero-name {
+      color: #ffffff !important;
+      text-shadow: 3px 3px 0 #000000, -1px -1px 0 #000000 !important;
+      font-size: clamp(60px, 10vw, 130px) !important;
+    }
+
+    body.rct2 .hero-name span { color: #ffcc00 !important; }
+
+    body.rct2 .hero-subtitle {
+      color: #e8f4e8 !important;
+      background: rgba(0,0,0,0.6);
+      padding: 12px 16px;
+      border: 2px solid #ffcc00;
+      text-shadow: 1px 1px 0 #000;
+    }
+
+    body.rct2 .btn-primary {
+      background: #000080 !important;
+      color: #ffffff !important;
+      border: 3px solid !important;
+      border-color: #ffffff #808080 #808080 #ffffff !important;
+      font-size: 13px !important;
+      letter-spacing: 1px !important;
+      text-shadow: none;
+      box-shadow: 2px 2px 0 #000000;
+    }
+
+    body.rct2 .btn-primary:hover {
+      background: #0000cc !important;
+      transform: translate(1px, 1px) !important;
+      box-shadow: 1px 1px 0 #000000 !important;
+      border-color: #808080 #ffffff #ffffff #808080 !important;
+    }
+
+    body.rct2 .btn-secondary {
+      background: #c0c0c0 !important;
+      color: #000000 !important;
+      border: 3px solid !important;
+      border-color: #ffffff #808080 #808080 #ffffff !important;
+      font-size: 13px !important;
+      letter-spacing: 1px !important;
+      box-shadow: 2px 2px 0 #000000;
+    }
+
+    body.rct2 .btn-secondary:hover {
+      background: #a0a0a0 !important;
+      transform: translate(1px, 1px) !important;
+      box-shadow: 1px 1px 0 #000000 !important;
+      border-color: #808080 #ffffff #ffffff #808080 !important;
+    }
+
+    body.rct2 .stat-num { color: #ffcc00 !important; text-shadow: 2px 2px 0 #000; }
+    body.rct2 .stat-label { color: #e8f4e8 !important; text-shadow: 1px 1px 0 #000; }
+    body.rct2 .scroll-line { background: linear-gradient(to bottom, #ffcc00, transparent) !important; }
+
+    body.rct2 section { background: #2a7a4a !important; }
+    body.rct2 #experience, body.rct2 #contact { background: #1e7040 !important; }
+
+    body.rct2 .section-label {
+      color: #ffcc00 !important;
+      text-shadow: 1px 1px 0 #000;
+      letter-spacing: 1px !important;
+    }
+
+    body.rct2 .section-title {
+      color: #ffffff !important;
+      text-shadow: 3px 3px 0 #000000 !important;
+    }
+
+    body.rct2 .divider { background: rgba(0,0,0,0.3) !important; border-top: 2px solid rgba(255,255,255,0.2); }
+
+    body.rct2 .about-text p { color: #e8f4e8 !important; text-shadow: 1px 1px 0 rgba(0,0,0,0.5); }
+    body.rct2 .about-text p strong { color: #ffcc00 !important; }
+
+    body.rct2 .about-card {
+      background: #c0c0c0 !important;
+      border: 3px solid !important;
+      border-color: #ffffff #808080 #808080 #ffffff !important;
+      box-shadow: 4px 4px 0 #000000;
+    }
+
+    body.rct2 .about-card h3 { color: #000080 !important; text-shadow: none; }
+    body.rct2 .contact-row { color: #000000 !important; }
+    body.rct2 .contact-row a { color: #000080 !important; }
+    body.rct2 .contact-row a:hover { color: #0000ff !important; }
+
+    body.rct2 .contact-row .icon {
+      background: #000080 !important;
+      border: 2px solid !important;
+      border-color: #ffffff #808080 #808080 #ffffff !important;
+      color: #ffffff;
+    }
+
+    body.rct2 .exp-item {
+      border-bottom: 2px solid rgba(0,0,0,0.3) !important;
+      background: rgba(0,0,0,0.1);
+      padding: 32px 16px !important;
+    }
+
+    body.rct2 .exp-item:first-child { border-top: 2px solid rgba(0,0,0,0.3) !important; }
+
+    body.rct2 .exp-company {
+      color: #ffcc00 !important;
+      text-shadow: 1px 1px 0 #000;
+      letter-spacing: 1px !important;
+    }
+
+    body.rct2 .exp-date { color: #e8f4e8 !important; }
+    body.rct2 .exp-role { color: #ffffff !important; text-shadow: 1px 1px 0 #000; }
+    body.rct2 .exp-desc { color: #c8e4c8 !important; }
+    body.rct2 .exp-bullets li { color: #e8f4e8 !important; }
+    body.rct2 .exp-bullets li::before { color: #ffcc00 !important; content: '►' !important; }
+
+    body.rct2 .skill-block {
+      background: #c0c0c0 !important;
+      border: 3px solid !important;
+      border-color: #ffffff #808080 #808080 #ffffff !important;
+      box-shadow: 3px 3px 0 #000000;
+    }
+
+    body.rct2 .skill-block:hover {
+      background: #d0d0d0 !important;
+      border-color: #ffffff #606060 #606060 #ffffff !important;
+    }
+
+    body.rct2 .skill-block h3 { color: #000080 !important; text-shadow: none !important; }
+
+    body.rct2 .skill-tag {
+      background: #000080 !important;
+      color: #ffffff !important;
+      border: 2px solid !important;
+      border-color: #4040c0 #000040 #000040 #4040c0 !important;
+      font-size: 11px !important;
+    }
+
+    body.rct2 .contact-left p { color: #e8f4e8 !important; text-shadow: 1px 1px 0 rgba(0,0,0,0.5); }
+
+    body.rct2 .form-label { color: #ffcc00 !important; text-shadow: 1px 1px 0 #000; }
+
+    body.rct2 .form-input, body.rct2 .form-textarea {
+      background: #ffffff !important;
+      border: 3px solid !important;
+      border-color: #808080 #ffffff #ffffff #808080 !important;
+      color: #000000 !important;
+      box-shadow: inset 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    body.rct2 .form-input:focus, body.rct2 .form-textarea:focus {
+      border-color: #000080 !important;
+      outline: 2px solid #000080;
+    }
+
+    body.rct2 .form-input::placeholder, body.rct2 .form-textarea::placeholder { color: #808080 !important; }
+
+    body.rct2 .form-submit {
+      background: #c0c0c0 !important;
+      color: #000000 !important;
+      border: 3px solid !important;
+      border-color: #ffffff #808080 #808080 #ffffff !important;
+      box-shadow: 2px 2px 0 #000000;
+      cursor: none;
+    }
+
+    body.rct2 .form-submit:hover {
+      background: #000080 !important;
+      color: #ffffff !important;
+      transform: translate(1px,1px) !important;
+      box-shadow: 1px 1px 0 #000000 !important;
+      border-color: #808080 #ffffff #ffffff #808080 !important;
+    }
+
+    body.rct2 .form-note { color: #c8e4c8 !important; text-shadow: 1px 1px 0 rgba(0,0,0,0.4); }
+
+    body.rct2 footer {
+      background: #c0c0c0 !important;
+      border-top: 3px solid !important;
+      border-color: #ffffff !important;
+      box-shadow: inset 0 3px 0 #ffffff;
+    }
+
+    body.rct2 footer p { color: #000000 !important; }
+    body.rct2 .footer-links a { color: #000080 !important; }
+    body.rct2 .footer-links a:hover { color: #0000ff !important; }
+
+    /* RCT2 cursor override */
+    body.rct2 .cursor {
+      background: #ff0000 !important;
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 0 !important;
+      mix-blend-mode: normal !important;
+    }
+
+    body.rct2 .cursor-ring {
+      border-color: #ff0000 !important;
+      border-radius: 0 !important;
+      width: 20px !important;
+      height: 20px !important;
+    }
+
+    /* RCT2 scrollbar */
+    body.rct2 ::-webkit-scrollbar { width: 16px; }
+    body.rct2 ::-webkit-scrollbar-track { background: #c0c0c0; }
+    body.rct2 ::-webkit-scrollbar-thumb {
+      background: #808080;
+      border: 2px solid;
+      border-color: #ffffff #606060 #606060 #ffffff;
+    }
+
+    /* ===== THEME TOGGLE BUTTON ===== */
+    #theme-toggle {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      background: #c0c0c0;
+      color: #000000;
+      border: 3px solid;
+      border-color: #ffffff #808080 #808080 #ffffff;
+      padding: 10px 16px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0;
+      cursor: none;
+      box-shadow: 3px 3px 0 #000000;
+      transition: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    #theme-toggle:hover {
+      background: #d4d4d4;
+    }
+
+    #theme-toggle:active {
+      border-color: #808080 #ffffff #ffffff #808080;
+      box-shadow: 1px 1px 0 #000000;
+      transform: translate(2px, 2px);
+    }
+
+    body.rct2 #theme-toggle {
+      background: #000080;
+      color: #ffffff;
+      border-color: #4040c0 #000040 #000040 #4040c0;
+      box-shadow: 3px 3px 0 #000000;
+    }
+
+    body.rct2 #theme-toggle:hover { background: #0000aa; }
+
+    @keyframes rct2-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    body.rct2 #theme-toggle .toggle-icon {
+      animation: rct2-blink 1s infinite;
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -488,6 +841,15 @@
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
+  <!-- THEME TOGGLE -->
+  <button id="theme-toggle" onclick="toggleTheme()" title="Toggle RollerCoaster Tycoon 2 Theme">
+    <span class="toggle-icon">🎢</span>
+    <span id="toggle-label">RCT2 Mode</span>
+  </button>
+
+  <!-- RCT2 ROLLERCOASTER CANVAS -->
+  <canvas id="rct2-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;display:none;image-rendering:pixelated;opacity:0.70;"></canvas>
+
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">AS</a>
@@ -551,7 +913,7 @@
           </div>
           <div class="contact-row">
             <div class="icon">✉️</div>
-            <a href="mailto:Adamshnitkin98@gmail.com">Adamshnitkin98@gmail.com</a>
+            <a href="/cdn-cgi/l/email-protection#c180a5a0acb2a9afa8b5aaa8aff8f981a6aca0a8adefa2aeac"><span class="__cf_email__" data-cfemail="d190b5b0bca2b9bfb8a5bab8bfe8e991b6bcb0b8bdffb2bebc">[email&#160;protected]</span></a>
           </div>
           <div class="contact-row">
             <div class="icon">📞</div>
@@ -725,7 +1087,7 @@
     <div class="contact-grid">
       <div class="contact-left reveal">
         <p>Whether you're a founder looking for fractional CFO support, an investor seeking financial diligence expertise, or a company in need of financial infrastructure — I'd love to connect.</p>
-        <p>Reach out via the form or directly at <a href="mailto:Adamshnitkin98@gmail.com" style="color:var(--gold);text-decoration:none;">Adamshnitkin98@gmail.com</a></p>
+        <p>Reach out via the form or directly at <a href="/cdn-cgi/l/email-protection#4504212428362d2b2c312e2c2b7c7d052228242c296b262a28" style="color:var(--gold);text-decoration:none;"><span class="__cf_email__" data-cfemail="83c2e7e2eef0ebedeaf7e8eaedbabbc3e4eee2eaefade0ecee">[email&#160;protected]</span></a></p>
         <p style="margin-top:40px; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold);">Based in New York City</p>
       </div>
       <div class="contact-form reveal">
@@ -755,13 +1117,13 @@
   <footer>
     <p>© 2026 Adam Shnitkin — All rights reserved</p>
     <div class="footer-links">
-      <a href="mailto:Adamshnitkin98@gmail.com">Email</a>
+      <a href="/cdn-cgi/l/email-protection#165772777b657e787f627d7f782f2e56717b777f7a3875797b">Email</a>
       <a href="https://www.linkedin.com/in/adamshnitkin/" target="_blank">LinkedIn</a>
       <a href="tel:5166408601">Phone</a>
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // CURSOR
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursorRing');
@@ -804,15 +1166,434 @@
         return;
       }
       btn.textContent = 'Message Sent ✓';
-      btn.style.background = '#2ecc71';
-      btn.disabled = true;
+      btn.style.background = '#27ae60';
       inputs.forEach(i => i.value = '');
-      setTimeout(() => {
-        btn.textContent = 'Send Message';
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 3000);
+      setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; }, 3000);
     }
+
+    // ===== RCT2 ISOMETRIC ROLLERCOASTER ANIMATION =====
+    (function() {
+      const canvas = document.getElementById('rct2-canvas');
+      const ctx = canvas.getContext('2d');
+      let animFrame = null;
+      let built = false;
+      let coasterT = [0, 0.33, 0.66]; // three trains on the main loop
+
+      // ── Isometric helpers ──────────────────────────────────────────
+      // We work in a "world" grid coordinate space (wx, wy, wz).
+      // wx/wy are the flat-ground axes; wz is height.
+      // Classic RCT2 iso projection: 2:1 diamond tiles, viewed from ~45° above.
+      const TILE = 32;   // pixel width of one tile (canvas pixels)
+      function isoX(wx, wy)      { return (wx - wy) * (TILE / 2); }
+      function isoY(wx, wy, wz)  { return (wx + wy) * (TILE / 4) - wz * (TILE / 2); }
+
+      // ── Catmull-Rom path sampler (world coords) ────────────────────
+      function sampleLoop(pts3d, steps) {
+        const out = [];
+        const n = pts3d.length;
+        for (let i = 0; i < steps; i++) {
+          const t  = i / steps;
+          const si = Math.floor(t * n);
+          const lt = t * n - si;
+          const t2 = lt * lt, t3 = lt * lt * lt;
+          const p0 = pts3d[(si - 1 + n) % n];
+          const p1 = pts3d[si % n];
+          const p2 = pts3d[(si + 1) % n];
+          const p3 = pts3d[(si + 2) % n];
+          const wx = 0.5*((2*p1[0])+(-p0[0]+p2[0])*lt+(2*p0[0]-5*p1[0]+4*p2[0]-p3[0])*t2+(-p0[0]+3*p1[0]-3*p2[0]+p3[0])*t3);
+          const wy = 0.5*((2*p1[1])+(-p0[1]+p2[1])*lt+(2*p0[1]-5*p1[1]+4*p2[1]-p3[1])*t2+(-p0[1]+3*p1[1]-3*p2[1]+p3[1])*t3);
+          const wz = 0.5*((2*p1[2])+(-p0[2]+p2[2])*lt+(2*p0[2]-5*p1[2]+4*p2[2]-p3[2])*t2+(-p0[2]+3*p1[2]-3*p2[2]+p3[2])*t3);
+          out.push([wx, wy, wz]);
+        }
+        return out;
+      }
+
+      // ── Coaster path definition ────────────────────────────────────
+      // A sweeping steel coaster: lift hill → big triangle drop → two spiral loops → return
+      // Coords are [wx, wy, wz]  (world units, 1 unit = 1 tile = 32px)
+      const RAW_PATH = [
+        // Station / ground entry
+        [ 2,  12, 0],
+        [ 2,  10, 0],
+        [ 2,   8, 0],
+        // Lift hill — climbs steeply
+        [ 2,   6, 0],
+        [ 2,   4, 1.5],
+        [ 2,   2, 3.5],
+        [ 2,   0, 6],
+        // Peak — top of lift
+        [ 3,  -1, 7],
+        [ 5,  -2, 7],
+        // First big drop down-right
+        [ 8,  -1, 5],
+        [11,   1, 2],
+        [13,   3, 0],
+        // Flat run right
+        [14,   5, 0],
+        [14,   7, 0],
+        // Turn back
+        [13,   9, 0],
+        [12,  11, 0.5],
+        // Loop 1 — small vertical loop (simulate with height oscillation)
+        [10,  12, 0],
+        [ 9,  12, 1.5],
+        [ 8,  11, 3],
+        [ 8,  10, 4],
+        [ 8,   9, 3],
+        [ 8,   8, 1.5],
+        [ 8,   7, 0],
+        // Sweep across
+        [ 7,   9, 0],
+        [ 6,  10, 0],
+        // Loop 2 — wider helix
+        [ 5,  11, 0],
+        [ 4,  11, 1],
+        [ 3,  10, 2],
+        [ 3,   9, 2.5],
+        [ 4,   8, 2],
+        [ 5,   9, 1],
+        [ 5,  10, 0],
+        // Final return to station
+        [ 4,  11, 0],
+        [ 3,  12, 0],
+        [ 2,  12, 0],
+      ];
+      const STEPS = 600;
+      let PATH = [];  // filled in buildScene, offset to center screen
+
+      // ── Scene objects ──────────────────────────────────────────────
+      let trees = [];
+
+      function buildScene() {
+        const W = canvas.width, H = canvas.height;
+
+        // Offset the path so it's centered-ish
+        const offX = W/2 / (TILE/2);   // world offset so iso(0,0) ≈ center-ish
+        const offY = 0;
+        const screenOffX = W * 0.50;
+        const screenOffY = H * 0.45;
+
+        // Pre-compute iso screen points
+        PATH = sampleLoop(RAW_PATH, STEPS).map(([wx, wy, wz]) => {
+          const sx = isoX(wx, wy) + screenOffX;
+          const sy = isoY(wx, wy, wz) + screenOffY;
+          return { sx, sy, wz };
+        });
+        // Add angle to each point
+        for (let i = 0; i < PATH.length; i++) {
+          const next = PATH[(i+1) % PATH.length];
+          const prev = PATH[(i-1+PATH.length) % PATH.length];
+          PATH[i].angle = Math.atan2(next.sy - prev.sy, next.sx - prev.sx);
+        }
+
+        // Trees — scattered in world space, avoid the track area
+        trees = [];
+        const treePos = [
+          [-3,2],[-3,5],[-3,8],[-3,11],[-3,14],
+          [-1,0],[-1,14],
+          [0,2],[0,14],
+          [16,2],[16,5],[16,8],[16,11],
+          [15,0],[15,13],
+          [10,-2],[7,-2],[4,-2],
+          [0,-2],[2,-2],
+          [6,14],[9,14],[12,14],
+        ];
+        treePos.forEach(([wx,wy]) => {
+          trees.push({
+            sx: isoX(wx, wy) + screenOffX,
+            sy: isoY(wx, wy, 0) + screenOffY,
+            size: 10 + (Math.random()*6|0)
+          });
+        });
+
+        built = true;
+      }
+
+      // ── Grass tile grid ────────────────────────────────────────────
+      function drawGrass() {
+        const W = canvas.width, H = canvas.height;
+        const screenOffX = W * 0.50;
+        const screenOffY = H * 0.45;
+
+        for (let wx = -4; wx <= 17; wx++) {
+          for (let wy = -3; wy <= 15; wy++) {
+            const cx = isoX(wx, wy) + screenOffX;
+            const cy = isoY(wx, wy, 0) + screenOffY;
+            // diamond tile
+            ctx.beginPath();
+            ctx.moveTo(cx,          cy - TILE/4);
+            ctx.lineTo(cx + TILE/2, cy);
+            ctx.lineTo(cx,          cy + TILE/4);
+            ctx.lineTo(cx - TILE/2, cy);
+            ctx.closePath();
+            // Checkerboard two greens
+            const even = (wx + wy) % 2 === 0;
+            ctx.fillStyle = even ? '#2e7d32' : '#388e3c';
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(0,0,0,0.18)';
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // ── RCT2-style isometric tree ──────────────────────────────────
+      function drawTree(t) {
+        const x = t.sx|0, y = t.sy|0, s = t.size;
+        // Trunk
+        ctx.fillStyle = '#5D4037';
+        ctx.fillRect(x-1, y, 3, s*0.5|0);
+        // Shadow ellipse under canopy
+        ctx.fillStyle = 'rgba(0,0,0,0.20)';
+        ctx.beginPath();
+        ctx.ellipse(x+1, y + s*0.15, s*0.6, s*0.25, 0, 0, Math.PI*2);
+        ctx.fill();
+        // Dark back canopy
+        ctx.fillStyle = '#1B5E20';
+        ctx.beginPath();
+        ctx.ellipse(x+1, y - s*0.3, s*0.55, s*0.6, 0, 0, Math.PI*2);
+        ctx.fill();
+        // Mid canopy
+        ctx.fillStyle = '#2E7D32';
+        ctx.beginPath();
+        ctx.ellipse(x+1, y - s*0.45, s*0.45, s*0.5, 0, 0, Math.PI*2);
+        ctx.fill();
+        // Bright highlight
+        ctx.fillStyle = '#43A047';
+        ctx.beginPath();
+        ctx.ellipse(x-1, y - s*0.55, s*0.25, s*0.28, -0.4, 0, Math.PI*2);
+        ctx.fill();
+      }
+
+      // ── Support column (vertical blue strut) ──────────────────────
+      function drawSupport(sx, sy, wz) {
+        if (wz < 0.3) return;
+        const groundY = sy + wz * (TILE/2);
+        const colH = wz * (TILE/2);
+        // Main vertical column
+        ctx.fillStyle = '#1565C0';
+        ctx.fillRect(sx - 1, sy, 3, colH);
+        // Highlight left edge
+        ctx.fillStyle = '#42A5F5';
+        ctx.fillRect(sx - 1, sy, 1, colH);
+        // Shadow right edge
+        ctx.fillStyle = '#0D47A1';
+        ctx.fillRect(sx + 1, sy, 1, colH);
+        // Small foot brace
+        ctx.fillStyle = '#0D47A1';
+        ctx.fillRect(sx - 3, groundY - 3, 7, 2);
+      }
+
+      // ── Track rail segment ─────────────────────────────────────────
+      function drawTrackSegment(p0, p1) {
+        const RAIL_OFFSET = 3;
+        const dx = p1.sx - p0.sx, dy = p1.sy - p0.sy;
+        const len = Math.sqrt(dx*dx+dy*dy) || 1;
+        const nx = -dy/len * RAIL_OFFSET, ny = dx/len * RAIL_OFFSET;
+
+        // Tie (cross-sleeper) every ~6th step
+        ctx.strokeStyle = '#E65100';
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        ctx.moveTo(p0.sx - nx*1.4, p0.sy - ny*1.4);
+        ctx.lineTo(p0.sx + nx*1.4, p0.sy + ny*1.4);
+        ctx.stroke();
+
+        // Left rail
+        ctx.strokeStyle = '#FF6D00';
+        ctx.lineWidth = 1.8;
+        ctx.beginPath();
+        ctx.moveTo(p0.sx - nx, p0.sy - ny);
+        ctx.lineTo(p1.sx - nx, p1.sy - ny);
+        ctx.stroke();
+        // Right rail
+        ctx.beginPath();
+        ctx.moveTo(p0.sx + nx, p0.sy + ny);
+        ctx.lineTo(p1.sx + nx, p1.sy + ny);
+        ctx.stroke();
+        // Rail shine highlight
+        ctx.strokeStyle = 'rgba(255,200,100,0.45)';
+        ctx.lineWidth = 0.8;
+        ctx.beginPath();
+        ctx.moveTo(p0.sx - nx*0.6, p0.sy - ny*0.6);
+        ctx.lineTo(p1.sx - nx*0.6, p1.sy - ny*0.6);
+        ctx.stroke();
+      }
+
+      // ── Full track draw: supports first, then rails on top ─────────
+      function drawTrack() {
+        const stride = 4; // draw every Nth point for supports/rails
+
+        // 1. Support columns (drawn first / behind)
+        for (let i = 0; i < PATH.length; i += stride) {
+          const p = PATH[i];
+          if (p.wz > 0.3) drawSupport(p.sx, p.sy, p.wz);
+        }
+
+        // 2. Track rails
+        for (let i = 0; i < PATH.length; i += 2) {
+          const p0 = PATH[i];
+          const p1 = PATH[(i+2) % PATH.length];
+          drawTrackSegment(p0, p1);
+        }
+      }
+
+      // ── Coaster train car ──────────────────────────────────────────
+      function drawCar(p, isLead) {
+        const { sx, sy, angle } = p;
+        ctx.save();
+        ctx.translate(sx, sy);
+        ctx.rotate(angle);
+
+        const W2 = 7, H2 = 5;
+
+        // Drop shadow
+        ctx.fillStyle = 'rgba(0,0,0,0.30)';
+        ctx.fillRect(-W2+1, H2-1, W2*2, 3);
+
+        // Car body — dark orange/brown base (undercarriage)
+        ctx.fillStyle = '#BF360C';
+        ctx.fillRect(-W2, -H2+2, W2*2, H2+2);
+
+        // Top surface — brighter orange
+        ctx.fillStyle = '#FF6D00';
+        ctx.fillRect(-W2, -H2, W2*2, H2);
+
+        // Highlight strip along top
+        ctx.fillStyle = '#FF8F00';
+        ctx.fillRect(-W2+1, -H2, W2*2-2, 2);
+
+        // Passenger seats (tiny dark rectangles)
+        ctx.fillStyle = '#1A237E';
+        ctx.fillRect(-4, -H2+2, 3, 3);
+        ctx.fillRect( 1, -H2+2, 3, 3);
+
+        // Wheels
+        ctx.fillStyle = '#212121';
+        ctx.fillRect(-W2,   H2-1, 4, 3);
+        ctx.fillRect( W2-4, H2-1, 4, 3);
+        // Wheel highlight
+        ctx.fillStyle = '#757575';
+        ctx.fillRect(-W2+1, H2, 2, 1);
+        ctx.fillRect( W2-3, H2, 2, 1);
+
+        if (isLead) {
+          // Nose cone
+          ctx.fillStyle = '#E65100';
+          ctx.beginPath();
+          ctx.moveTo(W2,   -H2);
+          ctx.lineTo(W2+5,  0);
+          ctx.lineTo(W2,    H2);
+          ctx.closePath();
+          ctx.fill();
+          // Headlight
+          ctx.fillStyle = '#FFEE58';
+          ctx.fillRect(W2+1, -2, 3, 3);
+        }
+
+        ctx.restore();
+      }
+
+      // ── Draw one full train at position t (0..1) ───────────────────
+      function drawTrain(t, numCars) {
+        const N = PATH.length;
+        const CAR_GAP = 0.018;
+        for (let c = numCars - 1; c >= 0; c--) {
+          // draw from last car first so front overlaps back
+          const idx = Math.floor(((t - c * CAR_GAP + 10) % 1) * N);
+          const p = PATH[idx % N];
+          drawCar(p, c === 0);
+        }
+      }
+
+      // ── Main render loop ───────────────────────────────────────────
+      const SPEEDS = [0.00065, 0.00060, 0.00055];
+      const CAR_COUNTS = [6, 5, 5];
+
+      function loop() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        if (!built) { animFrame = requestAnimationFrame(loop); return; }
+
+        // Grass ground
+        drawGrass();
+
+        // Trees (behind track)
+        // Sort by sy so closer trees draw on top
+        trees.slice().sort((a,b) => a.sy - b.sy).forEach(drawTree);
+
+        // Track (supports + rails)
+        drawTrack();
+
+        // Trains
+        for (let i = 0; i < coasterT.length; i++) {
+          coasterT[i] = (coasterT[i] + SPEEDS[i]) % 1;
+          drawTrain(coasterT[i], CAR_COUNTS[i]);
+        }
+
+        animFrame = requestAnimationFrame(loop);
+      }
+
+      function resize() {
+        canvas.width  = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      window.addEventListener('resize', () => {
+        resize();
+        buildScene();
+      });
+
+      function startRCT2() {
+        canvas.style.display = 'block';
+        resize();
+        buildScene();
+        if (!animFrame) loop();
+      }
+
+      function stopRCT2() {
+        canvas.style.display = 'none';
+        if (animFrame) { cancelAnimationFrame(animFrame); animFrame = null; }
+      }
+
+      window.startRCT2Animation = startRCT2;
+      window.stopRCT2Animation  = stopRCT2;
+
+      document.addEventListener('DOMContentLoaded', () => {
+        if (document.body.classList.contains('rct2')) startRCT2();
+      });
+    })();
+
+    // THEME TOGGLE
+    function toggleTheme() {
+      const body = document.body;
+      const label = document.getElementById('toggle-label');
+      const isRCT2 = body.classList.toggle('rct2');
+      if (isRCT2) {
+        label.textContent = '← Classic Mode';
+        document.title = '🎢 Adam Shnitkin — RCT2 Edition';
+        window.startRCT2Animation && window.startRCT2Animation();
+      } else {
+        label.textContent = 'RCT2 Mode';
+        document.title = 'Adam Shnitkin — Strategic Finance & CFO Leadership';
+        window.stopRCT2Animation && window.stopRCT2Animation();
+      }
+      try { localStorage.setItem('theme', isRCT2 ? 'rct2' : 'classic'); } catch(e) {}
+    }
+
+    // Restore saved theme
+    (function() {
+      try {
+        if (localStorage.getItem('theme') === 'rct2') {
+          document.body.classList.add('rct2');
+          const label = document.getElementById('toggle-label');
+          if (label) label.textContent = '← Classic Mode';
+          document.title = '🎢 Adam Shnitkin — RCT2 Edition';
+          // Animation auto-starts via DOMContentLoaded listener
+        }
+      } catch(e) {}
+    })();
+
   </script>
 </body>
 </html>
